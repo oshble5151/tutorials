@@ -4,6 +4,7 @@ def nctest(file:str):
     import numpy as np
     nf = nc.Dataset(file,'r')
     nml = nf.variables.keys()
+    print(nml)
     for i in nml:
         globals()[i] = nf.variables[i][:]
 
