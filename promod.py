@@ -1,13 +1,15 @@
-import os ; os.chdir('./')
-def nctest(file:str):
+import os ; os.chdir('C:/Users/eunky/Desktop')
+def ncmod(ncfile:str):
+    global file,nml
     import netCDF4 as nc
     import numpy as np
-    nf = nc.Dataset(file,'r')
-    nml = nf.variables.keys()
-    print(nml)
+    file = nc.Dataset(ncfile,'r')
+    nml = file.variables.keys()
+    print(file.variables.keys())
     for i in nml:
-        globals()[i] = nf.variables[i][:]
-
-
-nctest('atmos_month2001_0025_n.nc')
-print(tas)
+        globals()[i] = file.variables[i][:]
+        try:
+            globals()[i].mask=None
+        except:
+            pass  
+     
