@@ -1,0 +1,48 @@
+import iris 
+## 1. differnce of iris.load and load_cube
+file = iris.load('era_1981.nc','t2m')
+## output => [<iris 'Cube' of 2 metre temperature / (K) (time: 12; latitude: 241; longitude: 480)>]
+file = iris.load_cube('era_1981.nc','t2m')
+## out put only cube => <iris 'Cube' of 2 metre temperature / (K) (time: 12; latitude: 241; longitude: 480)>
+## iris.load['var1','var2'] == iris.load_cubes['var1','var2']
+
+
+
+## 2. select lat & lon when lode cube, using iris.Constraint
+
+# 2-1 when cube load 
+ 
+## for latitude
+lat1 = iris.Constraint(latitude = 89.25)
+file = iris.load('era_1985.nc',lat1)
+
+''' output  => one lat cubelist for all variable 
+[<iris 'Cube' of 2 metre temperature / (K) (time: 12; longitude: 480)>,
+<iris 'Cube' of Medium cloud cover / (unknown) (time: 12; longitude: 480)>,
+<iris 'Cube' of High cloud cover / (unknown) (time: 12; longitude: 480)>,
+<iris 'Cube' of Low cloud cover / (unknown) (time: 12; longitude: 480)>,
+<iris 'Cube' of cloud_area_fraction / (unknown) (time: 12; longitude: 480)>]
+'''
+
+## for lat&lon 
+lon1 = iris.Constraint(longitude = 89.25)
+file = iris.load('era_1985.nc',lat1&lon1)
+'''
+
+# output =>
+[<iris 'Cube' of Medium cloud cover / (unknown) (time: 12)>,
+<iris 'Cube' of 2 metre temperature / (K) (time: 12)>,
+<iris 'Cube' of High cloud cover / (unknown) (time: 12)>,
+<iris 'Cube' of Low cloud cover / (unknown) (time: 12)>,
+<iris 'Cube' of cloud_area_fraction / (unknown) (time: 12)>]
+'''
+
+2-2 after load with extract
+file.extract(lat1)    
+# output => <iris 'Cube' of 2 metre temperature / (K) (time: 12; longitude: 480)>
+
+
+
+
+
+
