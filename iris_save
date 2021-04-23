@@ -1,0 +1,9 @@
+##save
+file  = iris.load('era_1981.nc',['t2m','mcc']) # => CubeList
+iris.save(file,'test.nc')
+## output is ncfile that has two variables
+
+print(str(cube)) # long view
+print(repr(cube)) # less view
+
+## 4.2 working with cube 부터 다시보기
