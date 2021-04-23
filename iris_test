@@ -1,0 +1,5 @@
+import iris 
+file = iris.load('era_1981.nc','t2m')
+## output => [<iris 'Cube' of 2 metre temperature / (K) (time: 12; latitude: 241; longitude: 480)>]
+file = iris.load_cube('era_1981.nc','t2m')
+## out put only cube => <iris 'Cube' of 2 metre temperature / (K) (time: 12; latitude: 241; longitude: 480)>
