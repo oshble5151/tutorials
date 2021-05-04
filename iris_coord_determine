@@ -1,0 +1,12 @@
+import iris
+
+test = iris.cube.Cube(np.zeros((3,2,2)))
+time = iris.coords.Dimcoord([6,7,8],'time')
+lat = iris.coords.DimCoord([89.5,90],'latitude')
+lon = iris.coords.DimCoord([300,358.5],'longitude')
+test.add_dim_coord(t,0)
+test.add_dim_coord(lat,0)
+test.add_dim_coord(lon,0)
+
+
+
