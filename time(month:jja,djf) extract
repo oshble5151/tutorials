@@ -1,0 +1,15 @@
+import iris
+#extract year 1981~2010
+year = iris.Constraint(time=lambda cell:1981 <=cell.point.year <=2010)
+
+#extract month 6,7,8
+file = iris.load_cube('file_name')
+jja= iris.Constraint(time=lambda cell:6 <=cell.point.month <=8)
+
+file_jja = file.extract(jja)
+
+#extract month 12,1,2
+
+file = iris.load_cube('file_name')
+djf = iris.Constraint(time=lambda cell: cell.point.month==12 or cell.point.month==1 or cell.point.month==2)
+file_jja = file.extract(jja)
