@@ -13,3 +13,10 @@ file_jja = file.extract(jja)
 file = iris.load_cube('file_name')
 djf = iris.Constraint(time=lambda cell: cell.point.month==12 or cell.point.month==1 or cell.point.month==2)
 file_jja = file.extract(jja)
+
+
+lode file, selecting time
+import datetime
+from iris.time import PartialDateTime
+month_6 = iris.Constraint(time = PartialDateTime(month=6)) 
+file = iris.load_cube('precip.mon.mean.nc',month_6)
