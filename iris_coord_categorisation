@@ -1,0 +1,8 @@
+import iris
+import iris.coord_categorisation
+file = iris.load_cube('file_name')
+
+iris.coord_categorisation.add_season(cube,'time',name = 'clim_season')
+iris.coord_categorisation.add_season_year(cube,'time',name='season_year')
+
+
