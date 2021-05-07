@@ -1,5 +1,5 @@
 import iris
-#extract year 1981~2010
+# extract year 1981~2010
 year = iris.Constraint(time=lambda cell:1981 <=cell.point.year <=2010)
 
 #extract month 6,7,8
@@ -27,3 +27,9 @@ d1 = datetime.datetime.strptime('19810215T0000Z', '%Y%m%dT%H%MZ')
 d2 = datetime.datetime.strptime('20101225T0000Z', '%Y%m%dT%H%MZ')
 
 day = iris.Constraint(time=lambda cell: d1 <= cell.point < d2)
+
+# annually repeating date range
+from iris.time import PartialDateTime
+day_range = iris.Constraint(time=lambda cell: PartialDateTime(month=7, day=15) <= cell < PartialDateTime(month=8, day=25))
+
+
