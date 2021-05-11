@@ -1,0 +1,5 @@
+import iris
+f = iris.load_cube('file_name')
+f.units = 'mm/day'
+f.convert_units('mm/second')
+f.units = 'mm/second'
