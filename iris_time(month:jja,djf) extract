@@ -21,6 +21,11 @@ from iris.time import PartialDateTime
 month_6 = iris.Constraint(time = PartialDateTime(month=6)) 
 file = iris.load_cube('precip.mon.mean.nc',month_6)
 
+lode file, selecting time and variable
+file = iris.load_cube('precip.mon.mean.nc','var_name'&month_6)
+
+
+
 lode file, selecting day
 
 d1 = datetime.datetime.strptime('19810215T0000Z', '%Y%m%dT%H%MZ')
