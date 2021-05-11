@@ -1,0 +1,7 @@
+coord_names = [coord.name for coord in coords()]
+
+coord = file.coord('latitude')
+
+coord.standard_name
+coord.long_name
+coord.units
