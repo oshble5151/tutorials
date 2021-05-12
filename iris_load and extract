@@ -41,6 +41,10 @@ file = iris.load('era_1985.nc',lat1&lon1)
 file.extract(lat1)    
 # output => <iris 'Cube' of 2 metre temperature / (K) (time: 12; longitude: 480)>
 
+grid = iris.Constraint(longitude = 0,latitude=0)
+file.extract(grid)
+# output => <iris 'Cube' of 2 metre temperature / (K) (time: 12)>
+
 
 
 
