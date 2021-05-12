@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+
+import iris
+import iris.plot as iplt
+import iris.quickplot as qplt
+
+f = iris.load_cube('file_name') # 2 dimension
+
+select_latitude = iris.Constraint(latitude=lambda cell: 68 <= cell < 78)
+
+f = f.extract(select_latitude)
+
+
+for i in temperature.slices('longitude'):  # 선택한 위도에 대해 모든 경도를 다 plot함
+    
+qplt.plot(cube)
+iplt.show()
