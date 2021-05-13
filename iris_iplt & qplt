@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+
+import iris
+import iris.quickplot as qplt
+
+## only 2dim
+f = iris.load_cube('file_name')
+
+iplt.contourf() # no color bar & name
+qplt.contourf() # color bar & name
+
+
+
