@@ -22,3 +22,5 @@ qplt.pcolormesh(temperature_cube, cmap=brewer_cmap)
 # ciation
 qplt.contourf(temperature_cube, brewer_cmap.N, cmap=brewer_cmap)
 iplt.citation('ciation')
+
+plt.gca().coastlines()
