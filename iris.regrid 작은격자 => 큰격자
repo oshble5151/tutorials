@@ -1,0 +1,7 @@
+# 일부 지역의 격자 자료를 전 격자에 plot
+f1 = iris.load_cube('file_name1') # 전 지구 격자
+f2  = iris.load_cube('file_name2') # 일부 격자 
+
+f3 = f2.regrid(f1, iris.analysis.Linear(extrapolation_mode='mask')) # 외삽되는 값을 mask 처리
+# 전 격자에 일부지역의 값만 plot 된다.
+
