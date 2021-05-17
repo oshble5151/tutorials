@@ -15,6 +15,14 @@ a = [[--, --, 3],
      
      
 # mtol
+?? 다시 정리하기
+
+# Caching a regridder
+rotated_psl = iris.load_cube(iris.sample_data_path('rotated_pole.nc'))
+regridder = iris.analysis.Nearest().regridder(f1, f2)
+
+regridder(cube)
+
 
      
      
