@@ -1,0 +1,32 @@
+# scalra coold => merge는 scalra coold로 작업 수행
+f1  iris.load_cube()
+
+# collapsed => scalar coordinate가 자동 생성됨
+test = cube.collpased(['longitude','latitude'])
+
+print(_)
+Scalar coordinates:
+  latitude: 0.0 degrees, bound=(-90.0, 90.0) degrees
+  longitude: 180.0 degrees, bound=(0.0, 360.0) degrees
+
+test = cube.collpased(['time'])
+print(_)
+
+Scalar coordinates:
+  time: 1986-06-16 06:00:00, bound=(1986-06-01 12:00:00, 1986-07-01 00:00:00)
+
+
+f1.collapsed('time')
+
+# error =>
+MergeError: failed to merge into a single cube. 
+cube.attributes values differ for keys: 'history'
+
+#slove 
+del f1.attributes['history']
+del f2.attributes['history']
+del f3.attributes['history']
+
+# 
+
+
