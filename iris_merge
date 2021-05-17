@@ -1,4 +1,5 @@
 # scalra coold => merge는 scalra coold로 작업 수행
+monotonic sequences 로 결합 가능한 스칼라 좌표가 있어야함.
 f1  iris.load_cube()
 
 # collapsed => scalar coordinate가 자동 생성됨
