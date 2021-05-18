@@ -1,0 +1,25 @@
+f = iris.load_cube('precip.mon.mean.nc')
+#  [1979-01-01 00:00:00, ... , 1979-12-01 00:00:00]
+                         ...
+   [2020-01-01 00:00:00, ... , 2020-12-01 00:00:00]
+   
+   
+year = iris.Constraint(time=lambda cell:1981 <=cell.point.year <=2010)
+jja = iris.Constraint(time=lambda cell:6 <=cell.point.month <=8)
+djf = iris.Constraint(time=lambda cell: cell.point.month==12 or cell.point.month==1 or cell.point.month==2)
+
+f_new = iris.load_cube('precip.mon.mean.nc','precip'&year&jja)
+# [1982-06-01 00:00:00, 1982-07-01 00:00:00, 1982-08-01 00:00:00,
+   1983-06-01 00:00:00, 1983-07-01 00:00:00, 1983-08-01 00:00:00,
+                               ...
+   2010-06-01 00:00:00, 2010-07-01 00:00:00, 2010-08-01 00:00:00]
+
+# make 2d
+file_jja = f_new.collapsed('time',iris.analysis.MEAN)
+file_djf = f_new.collapsed('time',iris.analysis.MEAN)
+
+
+
+
+
+
