@@ -25,9 +25,18 @@ MergeError: failed to merge into a single cube.
 cube.attributes values differ for keys: 'history'
 
 #slove 
-del f1.attributes['history']
-del f2.attributes['history']
-del f3.attributes['history']
+del f1.attributes['history'] , f2.attributes['history'] , f3.attributes['history']
+
+# error =>
+MergeError: failed to merge into a single cube.
+Coordinates in cube.aux_coords (scalar) differ: time.
+
+#slove
+f1.coord('time').var_name = 'var_name'
+f2.coord('time').var_name = 'var_name'
+f3.coord('time').var_name = 'var_name'
+
+
 
 merge() & merge_cube() 차이
 
