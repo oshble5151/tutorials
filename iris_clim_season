@@ -1,0 +1,14 @@
+import iris
+import iris.coord_categorisation
+
+f = iris.load_cube('file_name')
+
+iris.coord_categorisation.add_season(cube, 'time', name='clim_season') # jja,djf 축 생성
+iris.coord_categorisation.add_season_year(cube, 'time', name='season_year') # year 축 생성
+
+# Auxiliary coordinates =>clim_season 보조축 생성
+
+new_f = f.aggregated_by(['clim_season', 'season_year'], iris.analysis.MEAN) # 계절별로 평균내어줌
+# 타임축 제거. 임시의 -- 축 
+
+
