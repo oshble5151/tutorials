@@ -3,3 +3,4 @@ f= iris.load_cube('file_name')
 f_mean = f.collapsed('time',iris.analysis.MEAN)
 
 anomaly = f - f_mean 
+# 넘파이의 brodcast 규칙을 따름
