@@ -27,7 +27,40 @@ longitude
 ```
 6월, 1월만 뽑아서 plot 해보기 위해서는 indexing이 필요하다.
 간단하게 파이썬의 indexing을 사용하거나, iris의 extract를 활용 할 수 있다.
-```python
-iris.
 ```
-전구 격자에 plot하기 위해서, 모든 월을 평균내어 2차원으로 만든 뒤 plot 해보았다.
+#python indexing
+f[5] #6월 
+f[0] #1월
+```
+```python
+#iris.Constraint 와 extract 활용 
+month_6 = iris.Constraint(time=lambda cell: cell.point.month ==6)
+month_1 = iris.Constraint(time=lambda cell: cell.point.month ==1)
+
+file_month6 = file.extract(month_6)
+file_month1 = file.extract(month_1)
+
+print(file_month6.coord('time'))
+print(file_month1.coord('time'))
+>>> DimCoord([1981-06-16 00:00:00] ...
+>>> DimCoord([1981-01-16 00:00:00] ...
+```
+# plot 결과
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
