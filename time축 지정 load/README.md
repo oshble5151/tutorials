@@ -53,4 +53,10 @@ file = iris.load_cube('atmos_month_1981.nc','tas'&jja&lat)
 print(file)
 >>>
 temperature at 2 m / (deg_k)        (time: 3; latitude: 31; longitude: 144) ...
+```
+6,7,8월의 자료를 평균 내어 2차원 자료로 만든 뒤, plot 해볼수 있다.
+```python
+new_file = file.collapsed('time',iris.analysis.MEAN)
+qplt.pcolormesh(new_file)
+```
 
