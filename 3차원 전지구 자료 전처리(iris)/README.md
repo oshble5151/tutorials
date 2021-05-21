@@ -46,7 +46,10 @@ print(file_month1.coord('time'))
 >>> DimCoord([1981-01-16 00:00:00] ...
 ```
 # plot 결과
+1) 6월 2m 대기온도
 ![5_21](https://user-images.githubusercontent.com/73323188/119101021-80bf3a80-ba53-11eb-8276-4b9017f6b345.png)
+2) 1월 2m 
+![5_21_djf](https://user-images.githubusercontent.com/73323188/119101389-e6132b80-ba53-11eb-8484-f266053a2f52.png)
 
 
 
