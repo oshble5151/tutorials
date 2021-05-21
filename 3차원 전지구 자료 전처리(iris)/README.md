@@ -42,8 +42,14 @@ file_month1 = file.extract(month_1)
 
 print(file_month6.coord('time'))
 print(file_month1.coord('time'))
->>> DimCoord([1981-06-16 00:00:00] ...
->>> DimCoord([1981-01-16 00:00:00] ...
+>>> DimCoord([1981-06-16 00:00:00] ... # 자료에서 6월만 추출됨
+>>> DimCoord([1981-01-16 00:00:00] ... # 자료에서 1월만 추출됨
+```
+qplt를 활용하여 간단히 plot 할수 있다.
+```python
+qplt.pcolormesh(file_month6)
+plt.clf()
+qplt.pcolormesh(file_month1)
 ```
 # plot 결과
 ![5_21](https://user-images.githubusercontent.com/73323188/119101021-80bf3a80-ba53-11eb-8276-4b9017f6b345.png)
