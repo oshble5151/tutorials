@@ -57,8 +57,11 @@ qplt.pcolormesh(file_month1)
 ![5_21_djf](https://user-images.githubusercontent.com/73323188/119101389-e6132b80-ba53-11eb-8484-f266053a2f52.png)
 
 ## 시각화에 대한 최종 목표
-생성된 그림은 qplt의 format을 따르기 때문에 다소 밋밋하다. 
-iris.cube.Cube 객체에 메써드 체인을 활용하여 basemap의 pcolormesh를 활용하여 interactive형식으로 간단하게 시각화 하고자 한다.
+생성된 그림은 qplt의 format을 따르기 때문에 다소 밋밋하다.
+
+iris.cube.Cube 객체에 메써드 체인을 활용하여 basemap의 pcolormesh를 연결하고자 한다.
+
+이를 통해 interactive형식으로 간단하게 시각화 하고자 한다.
 
 
 
