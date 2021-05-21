@@ -1,0 +1,16 @@
+import iris
+a = iris.load_cube('file_name')
+
+filename = iris.sample_data_path('colpex.pp')
+phenomenon_names = ['air_potential_temperature', 'air_pressure']
+pot_temperature, pressure = iris.load_cubes(filename, phenomenon_names)
+
+#기준 압력 p0 생성
+
+p0 = iris.coords.AuxCoord(1000.0, long_name='reference_pressure', units='hPa')
+
+보조축의 값 유닛 변경
+p0.convert_units(pressure.units)
+
+temperature = pot_temperature * ( (pressure / p0) ** (287.05 / 1005) )
+temperature.rename('air_temperature') # long name을 변경해줌.
