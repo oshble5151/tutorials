@@ -29,8 +29,7 @@ longitude
 간단하게 파이썬의 indexing을 사용하거나, iris의 extract를 활용 할 수 있다.
 ```python
 iris.
-
-
+```
 전구 격자에 plot하기 위해서, 모든 월을 평균내어 2차원으로 만든 뒤 plot 해보았다.
 
 
