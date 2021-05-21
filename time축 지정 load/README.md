@@ -59,4 +59,4 @@ temperature at 2 m / (deg_k)        (time: 3; latitude: 31; longitude: 144) ...
 new_file = file.collapsed('time',iris.analysis.MEAN)
 qplt.pcolormesh(new_file)
 ```
-
+![521qplt](https://user-images.githubusercontent.com/73323188/119143218-5173f200-ba82-11eb-81c0-64a9d18c9b48.PNG)
