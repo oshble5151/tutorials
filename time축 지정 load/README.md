@@ -60,7 +60,9 @@ new_file = file.collapsed('time',iris.analysis.MEAN)
 qplt.pcolormesh(new_file)
 ```
 ![521qplt](https://user-images.githubusercontent.com/73323188/119143218-5173f200-ba82-11eb-81c0-64a9d18c9b48.PNG)
+
 이와 같이 자료의 범위를 조정해서 load할 필요없이, basemap함수를 활용하여, 위경도를 선택하여 plot 할 수도있다.
+
 ![그림2](https://user-images.githubusercontent.com/73323188/119147344-75393700-ba86-11eb-8ae4-b39fff21d7ef.PNG)
 
 
