@@ -82,3 +82,44 @@ print(df)
 1  B_new              10            200          0  maintain      no
 2  C_new              10             50          2   renewal     yes
 ```
+
+## data 일부분을 추출하여 apply적용
+다음과 같이 data에 제품 D를 추가한뒤 item에 대한 선호도를 추가한다.  
+```python
+df.loc['d'] = ['D_new',30,100,3,'renewal','yes']
+print(df)
+>>>
+    item  weekdays_order  weekend_order  inventory     total reorder
+0  A_new             100            300          1  maintain      no
+1  B_new              10            200          0  maintain      no
+2  C_new              10             50          2   renewal     yes
+3  D_new              30            100          3   renewal     yes
+
+df['prefer'] = ['man_youger','woman_older','man_older','woman_youger']
+print(df)
+>>>
+    item  weekdays_order  weekend_order  ...     total reorder        prefer
+0  A_new             100            300  ...  maintain      no    man_youger
+1  B_new              10            200  ...  maintain      no   woman_older
+2  C_new              10             50  ...   renewal     yes     man_older
+3  D_new              30            100  ...   renewal     yes  woman_youger
+```
+apply를 사용하여 선호하는 성별과 나이를 따로 구분하여 열에 추가할 수 있다.
+```python
+def extract_gender(row):
+  return row.split('_')[0]
+def extract_age(row):
+  return row.split('_')[1]
+
+df['prefer_gender'] = df.prefer.apply(extract_gender)
+df['prefer_age'] = df.prefer.apply(age)
+
+print(df)
+>>>
+    item  weekdays_order  weekend_order  ...        prefer prefer_gender prefer_age
+0  A_new             100            300  ...    man_youger           man     youger
+1  B_new              10            200  ...   woman_older         woman      older
+2  C_new              10             50  ...     man_older           man      older
+3  D_new              30            100  ...  woman_youger         woman     youger
+
+[4 rows x 9 columns]
