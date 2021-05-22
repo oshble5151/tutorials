@@ -41,9 +41,28 @@ print(df)
 0  A_new             500            300          1    800
 1  B_new             300            200          0    500
 2  C_new             200             50          2    250
-'''
+```
 columns attribute로 접근하는 방식은 data를 수정은 가능하지만, 추가 해 줄수는 없다.
 
+## np.where을 활용한 data 수정
+```python
+df['inventory'] = np.where(df['item']!= "B_new", 'yes', 'no')
+```
+## apply method 활용
 
-
+사용자가 지정한 함수를 apply로 DataFrame에 적용시킬 수 있다.
+```python
+def test(row):
+  if row >= 500:
+    return "maintain"
+  else:
+    return "renewal"
+df.total = df.total.apply(test)
+print(df)
+>>>
+    item  weekdays_order  weekend_order  inventory     total
+0  A_new             100            300          1  maintain
+1  B_new              10            200          0  maintain
+2  C_new              10             50          2   renewal
+  
 
