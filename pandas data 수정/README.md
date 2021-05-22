@@ -23,7 +23,7 @@ print(df)
 ```
 DataFrame은 df['name']와 같은 방식 외에도, columns attribute로 접근하는 방식이 있다.
 
-columns attribute로 접근해서 data를 추가 할 수 도 있다.
+columns attribute로 접근해서 data를 수정 할 수 도 있다.
 ```python
 df.item = 'A_new B_new C_new'.split(' ')
 >>>
@@ -32,3 +32,18 @@ df.item = 'A_new B_new C_new'.split(' ')
 1  B_new             300            200          0
 2  C_new             200             50          2
 ```
+새로운 열을 추가할때, 기존의 열을 연산하여 값을 추가해 줄 수있다.
+```python
+df['total'] = df['weekdays_order'] + df['weekend_order']
+print(df)
+>>>
+    item  weekdays_order  weekend_order  inventory  total
+0  A_new             500            300          1    800
+1  B_new             300            200          0    500
+2  C_new             200             50          2    250
+'''
+columns attribute로 접근하는 방식은 data를 수정은 가능하지만, 추가 해 줄수는 없다.
+
+
+
+
