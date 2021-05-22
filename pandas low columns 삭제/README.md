@@ -39,7 +39,7 @@ drop(axis=1)을 활용하여 열을 삭제 할 수 있다.
 ```python
 df.drop(['country' ,continent'] , axis=1)
 ```
-iloc(numpy style indexing)을 활용하면 다음과 같이 동일한 결과를 얻을 수 있다.
+iloc(numpy style indexing)를 활용하면 다음과 같이 동일한 결과를 얻을 수 있다.
 ```python
 df.drop(df.iloc[:,0:2], axis=1)
 >>>
@@ -53,6 +53,18 @@ df.drop(df.iloc[:,0:2], axis=1)
 
 1702  2002   39.989  11926563  672.038623
 1703  2007   43.487  12311143  469.709298
+```
+colums attribute를 활용할 수 도 있다.
+```python
+d.drop(d.columns[0:2],1)
+>>>
+      year  lifeExp       pop   gdpPercap
+0     1952   28.801   8425333  779.445314
+1     1957   30.332   9240934  820.853030
+2     1962   31.997  10267083  853.100710
+3     1967   34.020  11537966  836.197138
+4     1972   36.088  13079460  739.981106
+...    ...      ...       ...         ...
 ```
 ```python
 df.drop(df.iloc[:,0:2], axis=1,inplace = True)
