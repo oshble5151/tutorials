@@ -64,5 +64,4 @@ print(df)
 0  A_new             100            300          1  maintain
 1  B_new              10            200          0  maintain
 2  C_new              10             50          2   renewal
-  
-
+```
