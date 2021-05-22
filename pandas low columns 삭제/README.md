@@ -97,8 +97,9 @@ print(df)
 ```
 year 조건을 만족하는 data만 나온 것을 확인 할 수 있다.
 
-## indexing 방식 - loc, iloc, ix 
+## indexing 방식 - loc, iloc 
 DataFrame에서 indexing을 통해 특정 행, 열의 값에 접근하기 위해서는 다음과 같이 접근해야한다.
+
 country 열에 첫번째 행값에 접근하기 위해서는 
 ```python
 df['country'][0]
@@ -112,7 +113,7 @@ df.loc[0,'country']
 'Afghanistan'
 ```
 이와 같이 loc는 [행,열]로 받아들여 indexing 해준다.
-```
+
 DataFrame은 indexing시에 기본적으로 열에 접근 하기 때문에, 위과 같이 접근할 경우 error가 발생한다.
 loc는 행의 name을 통해 접근할 수 있게 해준다.
 주의해야 하는 점은, loc는 name을 통해 접근하기 때문에 기본 python style과 같이 정수를 활용해 n번째 요소에 접근하는 indexing을 할 수 없다.
@@ -121,4 +122,40 @@ df.loc[-1]
 >>>
 KeyError: -1
 ```
+기본 numpy style(python style)로 indexing 하기 위해서 iloc를 사용할 수 있다.
+```python
+df.iloc[-1]
+>>>
+country      Zimbabwe
+continent      Africa
+year             2007
+lifeExp        43.487
+pop          12311143
+gdpPercap     469.709
+Name: 1703, dtype: object
+```
+다음과 같이 year, lifeExp, pop 열의  0~2번째 행을 추출할 수 있다.
+```python
+df.iloc[0:3,2:5]
+>>>
+   year  lifeExp       pop
+0  1952   28.801   8425333
+1  1957   30.332   9240934
+2  1962   31.997  10267083
+```
+iloc로 행이나 열의 name으로 접근할수 없다.
+```python
+df.iloc[0:3,'year']
+>>>
+raise ValueError(
+ValueError: Location based indexing can only have [integer, integer slice (START point is INCLUDED, END point is EXCLUDED), listlike of integers, boolean array] types
+```
+
+
+
+
+
+
+
+
 
