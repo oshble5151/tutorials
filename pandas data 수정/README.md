@@ -65,3 +65,20 @@ print(df)
 1  B_new              10            200          0  maintain
 2  C_new              10             50          2   renewal
 ```
+total 값이 renewal일 경우, 재주문(reorder)을 해야하는지 여부를 데이터에 추가할 수 있다.
+
+위와 동일한 방법으로 새로운 열을 생성할 수 있다.
+```python
+def test2(row):
+  if row == "maintain":
+    return "no"
+  else:
+    return "yes"
+df['reorder'] = df.total.apply(test2)
+print(df)
+>>>
+    item  weekdays_order  weekend_order  inventory     total reorder
+0  A_new             100            300          1  maintain      no
+1  B_new              10            200          0  maintain      no
+2  C_new              10             50          2   renewal     yes
+```
