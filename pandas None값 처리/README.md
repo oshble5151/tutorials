@@ -83,7 +83,6 @@ method를 활용하여, 인접해 있는 값으로 None 값을 처리 할 수 �
 
 method인수 'ffill'는 forward fill을 의미하며, 앞의 값으로 None값을 채워준다.
 
-'bfill'은 backward fill을 의미하며, 뒤의 값으로 채워준다.
 ```python
 print(df)
 >>>
@@ -94,9 +93,9 @@ print(df)
 3   Evan   boss   35
 4   Lucy  woker   20
 5   Jack  woker  NaN
+
 df.fillna(method = 'ffill')
 >>>
->>> df.fillna(method = 'ffill')
     name    job age
 0  Tomas   boss  30
 1   Jane  woker  30
@@ -104,7 +103,13 @@ df.fillna(method = 'ffill')
 3   Evan   boss  35
 4   Lucy  woker  20
 5   Jack  woker  20
+```
+첫번째, 두번째  None값이 앞의 값인 30과 20으로 각각 수정 되었다.
+
+'bfill'은 backward fill을 의미하며, 뒤의 값으로 채워준다.
+```python
 df.fillna(method = 'bfill')
+>>>
     name    job  age
 0  Tomas   boss   30
 1   Jane  woker   33
