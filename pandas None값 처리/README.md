@@ -76,7 +76,7 @@ df[df==np.nan] ='_'
 ```
 위와 같이 numpy의 bool masking indexing 형식으로는 Nan값이 변하지 않다.
 
-## fillna의 method 인수
+## fillna의 인수
 fillna에는 method라는 인수가 있다.
 
 method를 활용하여, 인접해 있는 값으로 None 값을 처리 할 수 있다.
@@ -121,3 +121,19 @@ df.fillna(method = 'bfill')
 ```
 df.fillna(method = 'bfill')의 결과와 같이, 앞이나 위의 값이 존재하지 않으면 None값은 그대로 남게 된다.
 
+## limit 
+limit 인수를 활용하여 바꾸고 싶은 None값의 개수를 설정 할 수 있다.
+
+ 다음과 같이 첫번째 None값만 바꿀수 있다.
+```python
+df.fillna('_',limit =1 )
+>>>
+    name    job  age
+0  Tomas   boss   30
+1   Jane  woker    _
+2   Mark   boss   33
+3   Evan   boss   35
+4   Lucy  woker   20
+5   Jack  woker  NaN
+```
+첫 번째 None값만 바뀐 것을 확인할 수 있다..
