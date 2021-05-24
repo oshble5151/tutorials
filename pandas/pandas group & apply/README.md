@@ -83,7 +83,9 @@ b    5.0
 dtype: float64
 ```
 
-위와 같이, apply는 함수를 각 colums에 적용시켜 준다.
+열을 기준으로 평균이 구해졌다.
+
+위와 같이, apply는 axis인자가 default일 경우 함수를 각 colums에 적용시켜 준다.
 
 함수안에 print(columns) 추가해서 함수의 인자 columns를 확인 할 수 있다.
 ```python
@@ -108,8 +110,10 @@ dtype: object
 ## apply 행기준 적용
 axis 인자를 활용하면, 함수가 열을 순환하면서 적용되게 할 수 있고, 행을 순환하면서 적용되게 할 수도 있다.
 
+다음과 같이 행을 기준으로 평균을 내기위해 함수를 조금 수정한뒤, apply를 적용시키고자 한다.
 ```python
 def func(columns):
+    print(columns)
     x = columns[0]
     y = columns[1]
     return (x+y) / df.shape[1]
@@ -129,3 +133,4 @@ Name: 2, dtype: int64
 2    4.5
 dtype: float64
 ```
+
