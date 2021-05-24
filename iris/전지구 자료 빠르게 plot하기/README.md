@@ -46,6 +46,10 @@ print(file_month1.coord('time'))
 >>> DimCoord([1981-01-16 00:00:00] ... # 자료에서 1월만 추출됨
 ```
 qplt를 활용하여 간단히 plot 할수 있다.
+
+qplt는 cube를 인수로 넣어주면, 축 data를 자동으로 인식하여 title, color_bar와 함께 plot해준다.
+
+
 ```python
 qplt.pcolormesh(file_month6)
 plt.clf()
