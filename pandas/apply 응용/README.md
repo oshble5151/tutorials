@@ -159,6 +159,18 @@ a    0.666667
 b    6.222222
 dtype: float64
 ```
-
-
-
+마찬가지로 행을 기준으로 적용시킬 수 도 있다.
+```python
+def var(*col,square):
+	mean = sum(col[0])/df.shape[1]
+	value = 0
+	for i in col[0]:
+		value += (i-mean)**square
+	return value/df.shape[1]
+df.apply(var,square=2, axis=1)
+>>>
+0    0.00
+1    2.25
+2    4.00
+dtype: float64
+```
