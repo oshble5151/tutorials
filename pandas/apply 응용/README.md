@@ -167,6 +167,7 @@ def var(*col,square):
 	for i in col[0]:
 		value += (i-mean)**square
 	return value/df.shape[1]
+
 df.apply(var,square=2, axis=1)
 >>>
 0    0.00
