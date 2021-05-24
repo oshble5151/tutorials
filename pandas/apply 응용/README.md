@@ -120,3 +120,45 @@ df.apply(func2,1) # 각 위도 지점에서의 전 경도범위의 평균값을 
 Length: 90, dtype: float64
 ```
 위와 같이 전지구 자료에 apply를 적용시켜, 각 위도(경도)에 대한 전 경도(위도) 범위의 평균값을 계산 할 수 있다.
+
+## apply로 인수가 여러개인 함수 사용
+
+apply로 인수를 하나 더 추가해서 사용하는 방법도 간단하다.
+
+분산을 구하는 함수를 만들어서 apply로 적용시키고자 한다.
+
+```python
+print(df)
+>>>
+   a  b
+0  1  1
+1  2  5
+2  3  7
+```
+사실 numpy에서 분산을 구하는 함수가 존재하므로, 다음과 같이 분산을 간단하게 apply로 적용시킬 수 있다.
+```python
+df.apply(np.var)
+>>>
+a    0.666667
+b    6.222222
+dtype: float64
+```
+여기서는 apply가 적용되는 원리를 이해하기 위해 직접 분산을 구하는 함수를 작성해보자 한다.
+```python
+
+def var(*col,square):
+	mean = sum(col[0])/df.shape[0]
+	value = 0
+	for i in col[0]:
+		value += (i-mean)**square
+	return value/df.shape[0]
+
+df.apply(var,square=2)
+>>>
+a    0.666667
+b    6.222222
+dtype: float64
+```
+
+
+
