@@ -24,7 +24,7 @@ DimCoord([1981-01-16 12:00:00, 1981-02-15 00:00:00, 1981-03-16 12:00:00,
 
 2. 12개의 월별 자료가 들어있다.
 
-## jja/djf 추출 - 
+## jja/djf 추출 
 ```python 
 jja = iris.Constraint(time = lambda cell: 6 <= cell.point <= 8)
 file_jja =  file.extract(jja)
