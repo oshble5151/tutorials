@@ -1,5 +1,7 @@
 # 절기(JJA,DJF) 선택한뒤 file load
 extract와 Constraint를 사용하면 자료의 필요한 월별에, 필요한 위경도만 선택하여 큐브를 생성할 수 있다.
+
+전지구 대기온도 자료에서 extract와 Constraint를 활용하여 월data, 혹은 격자를 추출 해보려 한다.  
 ## time 축 확인
 ```python 
 import iris
@@ -40,7 +42,7 @@ file = iris.load_cube('atmos_month_1981.nc','tas'&djf)
 ```
 결과는 마찬가지로 jja,djf(12,1,2)만 load와 동시에 추출된다.
 
-## + 위경도 동시 추출
+## 위경도 동시 추출
 
 위도와 경도도 Constraint를 사용하면 load와 동시에 추출 가능하다.
 
