@@ -37,6 +37,7 @@ a    2.0
 b    5.0
 dtype: float64
 ```
+*arg는 함수의 local 변수에 tuple로 저장되므로, return 에서 columns[0]으로 작성하여 tuple안의 값을 사용하게 해야함에 주의해야 한다.
 
 마찬가지로 행기준의 평균도 구할 수 있다.
 ```python
