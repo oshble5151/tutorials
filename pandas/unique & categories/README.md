@@ -39,7 +39,15 @@ Name: job, dtype: int64
 ```
 DataFrame에서는 모든 열의 값이 같아야 value_counts가 중복값으로 count한다.
 
+## pd.unique
+unique는 Series의 method 형태 뿐 아니라 바로 pandas의 함수로 사용가능하다.
 
+인수로는 array, list, Series가 들어갈 수 있다.
 
-
+```python
+pd.unique(df.job)
+>>>
+array(['boss', 'woker'], dtype=object)
+```
+결과는 method로서 사용할 때와 같다.
 
