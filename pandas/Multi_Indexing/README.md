@@ -86,7 +86,9 @@ restraunt steak         7      2
 ```python
 index_df = index_df = pd.DataFrame({'shop':['cafe','cafe','restraunt','restraunt'], 
                                     'product':['americano','latte','steak','pasta']})
+
 index_from_df = pd.MultiIndex.from_frame(index_df)
+
 df.index = index_from_df
 print(df)
 >>>
