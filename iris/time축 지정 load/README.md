@@ -26,7 +26,7 @@ DimCoord([1981-01-16 12:00:00, 1981-02-15 00:00:00, 1981-03-16 12:00:00,
 
 ## jja/djf 추출 
 ```python 
-jja = iris.Constraint(time = lambda cell: 6 <= cell.point <= 8)
+jja = iris.Constraint(time = lambda cell: 6 <= cell.point.month <= 8)
 file_jja =  file.extract(jja)
 file_djf =  file.extract(djf)
 print(file.coord('time'))
