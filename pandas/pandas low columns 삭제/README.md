@@ -34,11 +34,13 @@ df.drop([0,1,2])
 
 [1701 rows x 6 columns]
 ```
-drop(axis=1)을 활용하여 열을 삭제 할 수 있다.
+다음 두가지 방법으로 열을 지정하여 삭제 할 수 있다.
 
 ```python
 df.drop(['country' ,continent'] , axis=1)
+df.drop(columns = ['country' ,continent'])
 ```
+
 iloc(numpy style indexing)를 활용하면 다음과 같이 동일한 결과를 얻을 수 있다.
 ```python
 df.drop(df.iloc[:,0:2], axis=1)
