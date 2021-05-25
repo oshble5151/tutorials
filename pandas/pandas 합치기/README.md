@@ -60,12 +60,17 @@ df2.append(df3,ignore_index=1)
 
 다음과 같이 axis 인수로 행 기준으로 합치는 것도 가능하다.
 ```python
-pd.concat([df3,df4],axis=1)
+print(df4)
+>>>
+   age country
+0   30   Korea
+1   22   Japan
+2   35     U.S
+
+pd.concat([df2,df4],axis=1)
 >>> 
-      0      1   2      3
-0  Poll  woker  30  Korea
-1  Gwen  woker  22  Japan
-2  Jack   boss  35    U.S
+   name    job   age  country
+0  Jack   boss    30    Korea
+1  Mary  woker    22    Japan
+2  Cony   boss    35      U.S
 ```
-
-
