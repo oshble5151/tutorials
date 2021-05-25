@@ -34,6 +34,7 @@ print(df)
 1     5      6
 2     7      2
 3     0      1
+
 df.index = multi_index
 print(df)
 >>>
@@ -43,4 +44,56 @@ cafe      americano     3      4
 restraunt steak         7      2
           pasta         0      1
 ```
-          
+cafe와 restraunt의 정보에 접근할때는 loc를 사용하여 간단하게 접근 할 수 있다.
+```python
+df.loc['cafe']
+>>>
+           sale  stock
+americano     3      4
+latte         5      6
+
+df.loc['restraunt']
+>>>
+           sale  stock
+americano     7      2
+latte         0      1
+```
+mulit_index는 index의 정보를 확실히 하기 위해, index name을 붙여줄 수 있다.
+
+현재 index의 이름을 확인하고, 이름을 새로 지정하고자 한다.
+```python
+print(df.index.names)
+>>>
+FrozenList([None, None])
+```
+현재는 이름이 지정되어 있지 않다. 
+
+names attribute에 이름을 지정해 줄 수 있다.
+```python
+df.index.names = ['shop','product']
+
+>>>
+                     sale  stock
+shop      product               
+cafe      americano     3      4
+          latte         5      6
+restraunt steak         7      2
+          pasta         0      1
+```
+
+
+## DataFrame으로  multi_indexing 생성
+```python
+index_df = index_df = pd.DataFrame({'shop':['cafe','cafe','restraunt','restraunt'], 
+                                    'product':['americano','latte','steak','pasta']})
+index_from_df = pd.MultiIndex.from_frame(index_df)
+df.index = index_from_df
+print(df)
+>>>
+                     sale  stock
+shop      product               
+cafe      americano     3      4
+          latte         5      6
+restraunt steak         7      2
+          pasta         0      1
+```
