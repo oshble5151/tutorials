@@ -69,6 +69,14 @@ Categories (2, object): ['boss', 'woker']
 ```
 위와 같이 DataFram에 사용할 경우 열의 종류를 기준으로 분류하고, Series를 사용할 경우 행의 data를 기준으로 분류 해준다.
 
+또한 Categorical에 method로 unique를 활용 할 수 있다.
+```python
+pd.Categorical(df).unique()
+>>>
+['boss', 'woker']
+Categories (2, object): ['boss', 'woker']
+```
+
 Categorical은 다음과 같이 categories의 순서를 지정해 줄 수도 있다.
 ```python
 pd.Categorical(df.job,categories=['woker','boss'],ordered=True)
