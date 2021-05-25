@@ -6,11 +6,11 @@ import iris.quickplot as qplt
 ## only 2dim
 f = iris.load_cube('file_name')
 
-iplt.contourf() # no color bar & name
-qplt.contourf() # color bar & name
+iplt.contourf(f) # no color bar & name
+qplt.contourf(f) # color bar & name
 
-iplt.pcolormesh() 
-qplt.pcolormesh()
+iplt.pcolormesh(f) 
+qplt.pcolormesh(f)
 
 # applying cmap
 import matplotlib.cm as mpl_cm
