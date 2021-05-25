@@ -1,5 +1,5 @@
-## 1)Unique
-unique는 중복되는 값을 제외한 값을 보여준다.
+## 1) Unique
+unique는 중복되는 값을 제외한 값을 array로 반환 해준다.
 
 Serise의 Method이며 DataFrame에는 적용되지 않는다.
 ```python
@@ -39,7 +39,7 @@ Name: job, dtype: int64
 ```
 DataFrame에서는 모든 열의 값이 같아야 value_counts가 중복값으로 count한다.
 
-## pd.unique
+## 2) pd.unique
 unique는 Series의 method 형태 뿐 아니라 바로 pandas의 함수로 사용가능하다.
 
 인수로는 array, list, Series가 들어갈 수 있다.
@@ -50,4 +50,39 @@ pd.unique(df.job)
 array(['boss', 'woker'], dtype=object)
 ```
 결과는 method로서 사용할 때와 같다.
+
+## 3) Categorical
+Categorical을 사용하여 data를 categori 별로 확인할 수 있다.
+
+DataFrame과 Series를 모두 인수로 받을 수 있다.
+
+```python
+pd.Categorical(df)
+>>>
+['name', 'job']
+Categories (2, object): ['job', 'name']
+
+pd.Categorical(df,job)
+>>>
+['boss', 'woker', 'boss', 'woker', 'woker', 'boss']
+Categories (2, object): ['boss', 'woker']
+```
+위와 같이 DataFram에 사용할 경우 열의 종류를 기준으로 분류하고, Series를 사용할 경우 행의 data를 기준으로 분류 해준다.
+
+Categorical은 다음과 같이 categories의 순서를 지정해 줄 수도 있다.
+```python
+pd.Categorical(df.job,categories=['woker','boss'],ordered=True)
+>>>
+['boss', 'woker', 'boss', 'woker', 'woker', 'boss']
+Categories (2, object): ['woker' < 'boss']
+```
+순서를 지정해주면, categories의 최대 최소값을 attribute로 사용가능하다.
+```python
+categories = pd.Categorical(df.job,categories=['woker','boss'],ordered=True)
+categories.min()
+categories.max()
+>>>
+'woker'
+'boss'
+```
 
