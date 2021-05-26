@@ -78,10 +78,11 @@ for i in lon_slice:
 [13.75]
 
 for_index_list = [lon_slice,[1,2,3,4,5,6],['1.25','3.75','6.25','8.75','11.25','13.25']]
+
 for i,j,z in zip(*for_index_list): 
   plt.subplot(2,3,j)
   qplt.plot(i)
-  iplt.citation('lat:'+z)
+  iplt.citation(' lat:'+z+' degrees_N'+'\n time: 1981_01_16')
   plt.show()
 ```
-![image](https://user-images.githubusercontent.com/73323188/119593900-c8f4a900-be15-11eb-830c-4580d5076317.png)
+![image](https://user-images.githubusercontent.com/73323188/119594247-63ed8300-be16-11eb-8e86-16cbf41c8526.png)
