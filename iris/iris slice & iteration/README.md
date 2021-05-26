@@ -45,10 +45,10 @@ print(slice_list)
 
 time축이 총 12개 이므로, slice로 생성된 iterator에는 총 144 * 12(=1728)개의 자료가 담겨있는 것을 확인할 수 있다.
 
-## 생성된 slice 자료 확인 및 plot
+## 생성된 slice 자료 확인
 slice를 통해 생성된 자료는, slice시 기준으로 사용했던 축을 Dimension coordnation으로 가지고, 나머지 축은 scalarcoordination으로 가진다.
 
-위도를 기준으로 slice한 파일의 축 정보를 확인해 보고자 한다.
+먼저 다음과 같이 위도를 기준으로 slice한 파일의 축 정보를 확인해 보고자 한다.
 ```
 slice_list[0]
 
@@ -61,6 +61,11 @@ temperature at 2 m / (deg_k)        (latitude: 90)
           longitude: 1.25 degrees_E, bound=(0.0, 2.5) degrees_E
           time: 1981-01-16 12:00:00, bound=(1981-01-01 00:00:00, 1981-02-01 00:00:00), ...
 ```
+위와 같이 Dimension coordnation과 scalarcoordination 축의 정보를 확인 할 수 있다.
+
+## silce 자료 plot
+1728개의 자료 중에서, 순차대로 6개의 자료를 뽑아 각각 plot 해보고자 한다.
+
 ```python
 import iris.plot as iplt
 import iris.quickplot as qplt
@@ -77,6 +82,18 @@ for i in lon_slice:
 [11.25]
 [13.75]
 
+for i in lon_slice:
+    print(i.coord('time'))
+>>>
+DimCoord([1981-01-16 12:00:00], bounds=[[1981-01-01 00:00:00, 1981-02-01 00:00:00]], standard_name='time', calendar='julian', long_name='time', var_name='time', attributes={'calendar_type': 'JULIAN', 'cartesian_axis': 'T'})
+DimCoord([1981-01-16 12:00:00], bounds=[[1981-01-01 00:00:00, 1981-02-01 00:00:00]], standard_name='time', calendar='julian', 
+long_name='time', var_name='time', attributes={'calendar_type': 'JULIAN', 'cartesian_axis': 'T'})
+                                                            ...
+DimCoord([1981-01-16 12:00:00], bounds=[[1981-01-01 00:00:00, 1981-02-01 00:00:00]], standard_name='time', calendar='julian', long_name='time', var_name='time', attributes={'calendar_type': 'JULIAN', 'cartesian_axis': 'T'})
+```
+추출한 1981-01-16일의 6개의 경도 지점(1.25, 3.75, 6.25, 8.75, 11.25, 13.75)의 자료를 다음과 같이 plot 할 수 있다.
+
+```python
 for_index_list = [lon_slice,[1,2,3,4,5,6],['1.25','3.75','6.25','8.75','11.25','13.25']]
 
 for i,j,z in zip(*for_index_list): 
@@ -86,3 +103,4 @@ for i,j,z in zip(*for_index_list):
   plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/73323188/119594247-63ed8300-be16-11eb-8e86-16cbf41c8526.png)
+```
