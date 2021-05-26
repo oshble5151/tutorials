@@ -25,7 +25,7 @@ test10  32.0   NaN   NaN   68.0  28.0    NaN  73.0    NaN   99.0    NaN
 
 부득이 하게 시험을 못쳤을 경우, 앞의 성적과 뒤의 성적을 반영하여 추측한 점수를 주려고 한다.
 
-다음과 interpolate method를 활용하여 내삽할 수 있다.
+다음과 같이 interpolate method를 활용하여 내삽할 수 있다.
 
 interpolate는 default로 linear 방법을 이용하여 내삽해준다.
 
