@@ -46,12 +46,12 @@ test10  32.0  59.0  87.0   68.0  28.0   93.0  73.0  33.000000  99.000000   97.0
 ```
 값이 채워진 것을 확인 할 수 있다.
 
-## limit_directiond
+## limit_direction
 맨처음의 시험을 치지 않은 경우, 맨처음 시험의 성적과 그 바로 뒤의 시험은 내삽이 되지 않았다.
 
 이는 연속적인 Nan의 처리 방향을 설정하는 limit_directiond 인수를 이용하여 해결 할 수 있다. 
 
-limit_directiond이 forward일 경우 앞의 값이 Nan인 경우 내삽할 수 없는데, default 값이 forward이기 때문에 앞의 값이 없는 경우 내삽이 되지 않았다.
+limit_direction이 forward일 경우 앞의 값이 Nan인 경우 내삽할 수 없는데, default 값이 forward이기 때문에 앞의 값이 없는 경우 내삽이 되지 않았다.
 
 
 ```python
