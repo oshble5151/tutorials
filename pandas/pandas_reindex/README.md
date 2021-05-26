@@ -54,7 +54,7 @@ Michael의 모든 신체 정보가 Jack과 같을 수가 있다.
 ```python
 df_org_columns = list(df.columns)
 df.columns = [0,1,2]
-df = df.reindex([0,1,2,3],axis =1,method='ffill')
+df = df.reindex([0,1,2,3], axis =1, method='ffill')
 print(df)
 >>>
             0      1      2      3
