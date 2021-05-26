@@ -101,3 +101,34 @@ restraunt steak         7      2
           pasta         0      1
 ```
 
+multi_index는 columns으로도 사용 가능하다.
+```python
+print(df)
+>>>
+   0  1  2  3
+0  3  5  7  0
+1  4  6  2  1
+
+df.index = ['sale','stock']
+df.columns = index_from_df
+print(df)
+>>>
+shop         cafe       restraunt      
+product americano latte     steak pasta
+sale            3     5         7     0
+stock           4     6         2     1
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
