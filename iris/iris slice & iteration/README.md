@@ -49,7 +49,7 @@ time축이 총 12개 이므로, slice로 생성된 iterator에는 총 144 * 12(=
 slice를 통해 생성된 자료는, slice시 기준으로 사용했던 축을 Dimension coordnation으로 가지고, 나머지 축은 scalarcoordination으로 가진다.
 
 먼저 다음과 같이 위도를 기준으로 slice한 파일의 축 정보를 확인해 보고자 한다.
-```
+```python
 slice_list[0]
 
 print(slice_list)
@@ -103,4 +103,4 @@ for i,j,z in zip(*for_index_list):
   plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/73323188/119594247-63ed8300-be16-11eb-8e86-16cbf41c8526.png)
-```
+
