@@ -31,7 +31,8 @@ array([[[31,  8, 47, 66, 29],
         [19, 51, 62, 74, 61],
         [30, 39,  4, 24, 59],
         [43, 26, 14, 41,  5]]])
-### 축 지정
+```
+## 축 지정 및 metadata 확인
 현재 생성된 큐브는 축에 대한 metadata가 들어있지 않아 Unkown으로 표시되고 있다.
 
 축은 iris.coord를 사용하여 다음과 같이 지정해 줄 수 있다.
@@ -48,9 +49,8 @@ print(file)
 <iris 'Cube' of unknown / (unknown) (time: 3; latitude: 5; longitude: 5)>
 ```
 축이 잘 지정된 것을 확인 할 수 있다.
-
-## 축 data 확인 
-축에 대한 metamdata들은 다음과 같이 확인 할 수 있다.
+ 
+축에 대한 meta data들은 다음과 같이 확인 할 수 있다. 
 ```python
 file.coord('time')
 file.coord('time').points
@@ -77,6 +77,31 @@ print(file.coord('time'))
 DimCoord([1983-11-04 00:00:00, 1983-11-05 00:00:00, 1983-11-06 00:00:00], standard_name='time', calendar='julian')
 ```
 위와 같이 축을 바꾸어서, 우리에게 익숙한 date-time 형식으로 시간축의 값을 확인해 볼수 있다. 
+
+## standard name 지정
+
+위에서 standard name이 Unkown인 것을 확인 하였다.
+
+standard name은 merge 할때 지정되어있어야 하거나, qplt로 plot할때 자동으로 title로 사용되기 때문에, 지정해주는 것이 유용하다.
+
+축의 name은 iris의 std_names 모듈에 지정되어 있는 문자열 객체로 사용해야 한다.
+
+이는 다음과 같이 확인 가능하다.
+```python
+import iris.std_names as std 
+std.STD_NAMES.keys()
+>>>
+dict_keys(['acoustic_signal_roundtrip_travel_time_in_sea_water', 
+           'aerodynamic_particle_diameter', 'aerodynamic_resistance',
+           'aerosol_angstrom_exponent', 'age_of_sea_ice' ...
+```
+대기 온도에 대한 큐브로 만들기 위해, air_temperature를 standard name으로 주려고 한다.
+```python
+file.standard_name = 'air_temperature'
+print(file)
+>>>
+
+
 
 
 
