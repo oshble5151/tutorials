@@ -1,6 +1,6 @@
 ## iris cube생성하기
 
-시간,위도,경도 축을 가지는 3*5*5 size의 
+시간,위도,경도 축을 가지는 3*5*5 size의 해수면 온도를 가지는 자료를 생성해보고자 한다.
 기본적으로 다음과 같이 생성한다.
 ```python
 import iris
@@ -95,12 +95,43 @@ dict_keys(['acoustic_signal_roundtrip_travel_time_in_sea_water',
            'aerodynamic_particle_diameter', 'aerodynamic_resistance',
            'aerosol_angstrom_exponent', 'age_of_sea_ice' ...
 ```
-대기 온도에 대한 큐브로 만들기 위해, air_temperature를 standard name으로 주려고 한다.
+대기 온도에 대한 큐브로 만들기 위해, air_temperature를 standard name으로 주고, 섭씨(celsius)를 units으로 주려고 한다.
 ```python
-file.standard_name = 'air_temperature'
+file.standard_name = 'sea_surface_temperature'
+file.units='celsius'
 print(file)
 >>>
+<iris 'Cube' of air_temperature / (celsius) (time: 3; latitude: 5; longitude: 5)>
+```
 
+마지막으로, 실제 해수온도와 유사한 데이터 값으로 주기 위해, 15~18도의 범위로 데이터를 바꾸려고 한다.
+dube의 데이터는 masked array형태로 제공되며, 다음과 같이 간단하게 값을 바꾸어 줄 수 있다.
+
+```python
+
+sea_temp = np.random.choice(np.arange(16,18,0.25),(3,5,5),1)
+
+file.data = sea_temp 
+print(file.data)
+>>>
+array([[[15.  , 16.75, 16.75, 16.25, 15.75],
+        [17.5 , 17.  , 16.75, 17.  , 17.25],
+        [15.  , 17.25, 17.  , 16.5 , 15.25],
+        [15.75, 16.5 , 15.75, 17.5 , 16.75],
+        [17.5 , 17.75, 17.25, 17.75, 17.5 ]],
+
+       [[16.5 , 17.25, 17.5 , 16.5 , 17.25],
+        [16.75, 15.25, 15.  , 16.75, 17.75],
+        [17.  , 15.25, 15.5 , 17.25, 16.  ],
+        [16.5 , 17.75, 15.75, 15.75, 15.75],
+        [16.  , 16.  , 16.5 , 17.25, 15.25]],
+
+       [[15.5 , 15.5 , 16.25, 15.75, 16.75],
+        [16.75, 17.5 , 16.25, 15.  , 17.75],
+        [15.75, 15.75, 15.25, 16.25, 15.25],
+        [15.75, 15.  , 17.  , 15.  , 15.  ],
+        [15.25, 17.  , 15.75, 16.75, 16.75]]])
+ ```
 
 
 
