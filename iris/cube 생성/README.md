@@ -2,7 +2,7 @@
 
 시간,위도,경도 축을 가지는 3*5*5 size의 
 기본적으로 다음과 같이 생성한다.
-```
+```python
 import iris
 import numpy as np
 array = np.random.choice(75,(3,5,5),0)
@@ -49,7 +49,40 @@ print(file)
 ```
 축이 잘 지정된 것을 확인 할 수 있다.
 
-## 축 data 확인 및 time축 units 지정 
-축data는 다음과 같이 확인 할 수 있ㄷ.ㅏ
+## 축 data 확인 
+축에 대한 metamdata들은 다음과 같이 확인 할 수 있다.
 ```python
-48885,
+file.coord('time')
+file.coord('time').points
+file.coord('time').units
+>>>
+DimCoord(array([48885, 48886, 48887]), standard_name='time', units=Unit('1'))
+array([48885, 48886, 48887])
+Unit('1')
+```
+
+## time축 units 지정 
+축을 생성할때 unit을 정해주지 않으면 기본적으로 1이 들어간다. 이 경우 print 사용 시 다음과 같이 처음 입력했던 Julian 단위의 시간을 변환 없이 보여준다.
+```python
+print(file.coord('time'))
+>>>
+DimCoord(array([48885, 48886, 48887]), standard_name='time', units=Unit('1'))
+```
+cf_units을 사용하여 다음과 같이 축지정을 해줄 수 있다.
+```python
+time_coord_unit = cf_units.Unit('days since 1850-01-01 00:00:00', calendar='julian')
+file.coord('time').units = time_coord_unit
+print(file.coord('time'))
+>>>
+DimCoord([1983-11-04 00:00:00, 1983-11-05 00:00:00, 1983-11-06 00:00:00], standard_name='time', calendar='julian')
+```
+위와 같이 축을 바꾸어서, 우리에게 익숙한 date-time 형식으로 시간축의 값을 확인해 볼수 있다. 
+
+
+
+
+
+
+
+
+
