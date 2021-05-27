@@ -9,7 +9,6 @@ interpolation을 하기 위해서는 다음 2가지 인수가 필요하다.
 
 1. sample point
 2. scheme
-
 # sample point 가 위도 경도 모두 포함할때
 다음과 같은 위경도 90*144의 2차원 큐브가 있을때,
 ```python
@@ -24,9 +23,6 @@ array([51.57303371, 53.59550562])
 sample point를 위도와 경도차원 모두 주어, 존재하지 않는 격자지점인 **(위도:52.25, 경도:0)** 포인트에서의 값을 interpolate 할 수있다.
 
 이처럼 한 격자의 값을 내삽법으로 추측하고 싶을때 다음과 같이 interpolate 할 수 있다.
-
-sample point를 위도와 경도에 모두 부여할 필요는 없다. 
-
 ```python
 sample_points = [('latitude', 52.25), ('longitude', 0)]
 file.interpolate(sample_points, iris.analysis.Linear()).data
