@@ -19,4 +19,7 @@ Applying단계에서는, 다음을 수행 가능하다.
 **1. Transformation : 그룹별로 계산을 수행해준다.
 **2. Filtration : 
 
+연령과 성별에 따른 두 정당에 대한 지지율 data가 들어있는 DataFrame으로 grouping을 해보고자 한다. 
+```python
+print(df)
 
