@@ -12,8 +12,6 @@ df
 2     1
 
 df.loc[:,'new_col'] = [0,0,0]
-
-df.loc[:,'pow_col'] = df['col1']**2
 >>>
    col1  new_col
 0     4        0
@@ -22,7 +20,7 @@ df.loc[:,'pow_col'] = df['col1']**2
 ```
 loc를 열을 추가 할때 다음과 같이 간단하게 기존에 존재하던 열의 제곱값을 가진 열을 새로 추가할 수 있다.
 ```python
-
+df.loc[:,'pow_col'] = df['col1']**2
 >>>
    col1  pow_col
 0     4       16
