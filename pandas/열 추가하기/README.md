@@ -1,6 +1,35 @@
 # 데이터 열 추가하기
 
-## 1. df.insert 
+## location(loc)
+loc indexting을 활용하여 간단하게 값을 지정 할 수 있다.
+```python
+print(df)
+>>>
+df
+   col1
+0     4
+1     8
+2     1
+
+df.loc[:,'new_col'] = [0,0,0]
+
+df.loc[:,'pow_col'] = df['col1']**2
+>>>
+   col1  new_col
+0     4        0
+1     8        0
+2     1        0
+```
+loc를 열을 추가 할때 다음과 같이 간단하게 기존에 존재하던 열의 제곱값을 가진 열을 새로 추가할 수 있다.
+```python
+
+>>>
+   col1  pow_col
+0     4       16
+1     8       64
+2     1        1
+```
+## 2. df.insert 
 insert를 활용하면 열의 순서를 지정하여 추가해줄 수 있다.
 ```python
 print(df)
@@ -30,7 +59,7 @@ df.insert(0,'new_col',[0]*3,allow_duplicates=True)
 1        0        0   0.0   0.0   0.0
 2        0        0   0.0   0.0   0.0
 ```
-## 2. df.assign
+## 3. df.assign
 assign을 활용하면 다음과 같이 columns 여러개를 추가할 수 있다.
 ```python
 print(df)
