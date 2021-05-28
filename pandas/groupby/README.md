@@ -23,3 +23,4 @@ Applying단계에서는, 다음을 수행 가능하다.
 ```python
 print(df)
 
+groupy는 열에만 적용되지만, index가 multi_index인 경우 행에도 지원된다.
