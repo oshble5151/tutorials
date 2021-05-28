@@ -13,7 +13,7 @@ DimCoord([2001-01-16 12:00:00, 2001-02-15 00:00:00, 2001-03-16 12:00:00,
        2001-10-16 12:00:00, 2001-11-16 00:00:00, 2001-12-16 12:00:00], ...
 (12,90,144)
 ```
-iris에서는 time 축을 print하면 datetime형식으로 변환하여 출력해준다. 
+(iris에서는 time 축을 print하면 datetime형식으로 변환하여 출력해준다.)
 
 12달의 위경도 90 by 144의 자료가 들어있음을 확인할 수 있다.
 
@@ -27,3 +27,23 @@ iris에서는 time 축을 print하면 datetime형식으로 변환하여 출력�
 
 위 과정은 다음과 같이 코드를 작성하여 진행 할 수 있다.
 ```python
+import iris.coord_categorisation
+iris.coord_categorisation.add_season(file,'time',name = 'clim_season') # file에 clim_season 축을 추가
+print(file)
+>>>
+temperature at 2 m / (deg_k)        (time: 12; latitude: 90; longitude: 144)
+     Dimension coordinates:
+          time                           x             -              -
+          latitude                       -             x              -
+          longitude                      -             -              x
+     Auxiliary coordinates:
+          clim_season                    x             -              -
+     Attributes: ...
+
+print(file.coord('clim_season'))
+>>>
+AuxCoord(array(['djf', 'djf', 'mam', 'mam', 'mam', 'jja', 'jja', 'jja', 'son',
+       'son', 'son', 'djf'], dtype='<U64'), standard_name=None, units=Unit('no_unit'), long_name='clim_season', attributes={'calendar_type': 'JULIAN', 'cartesian_axis': 'T'})
+```
+time축에 대한 보조축인 clim_season이 추가된 것을 확인할 수 있다.
+               
