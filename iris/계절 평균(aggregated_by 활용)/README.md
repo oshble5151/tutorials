@@ -46,4 +46,12 @@ AuxCoord(array(['djf', 'djf', 'mam', 'mam', 'mam', 'jja', 'jja', 'jja', 'son',
        'son', 'son', 'djf'], dtype='<U64'), standard_name=None, units=Unit('no_unit'), long_name='clim_season', attributes={'calendar_type': 'JULIAN', 'cartesian_axis': 'T'})
 ```
 time축에 대한 보조축인 clim_season이 추가된 것을 확인할 수 있다.
-               
+
+clim_season 축을 기준으로 평균을 내고자 하는 경우 aggregated_by를 활용하여 가능하다.
+```python
+seasonal_mean = f.aggregated_by('clim_seasons',iris.analysis.MEAN) 
+print(seasonal_mean)
+>>>
+<iris 'Cube' of temperature at 2 m / (deg_k) (-- : 4; latitude: 90; longitude: 144)>
+```
+위와 같이 각 계절별 평균 cube 4개가 생성된 것을 확인할 수 있다.
