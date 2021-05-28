@@ -85,7 +85,7 @@ df.groupby(['continent','year']).get_group(('Asia',1952))['gdpPercap']
 1668       781.717576
 Name: gdpPercap, dtype: float64
 ```
-## filter
+## groupby.filter
 
 gdp의 평균을 다음과 같이 구할 수 있다.
 ```python 
@@ -109,6 +109,7 @@ df.groupby('continent').filter(lambda x : x['gdpPercap'].mean() > 7000)
 [1080 rows x 6 columns]
 ```
 위 코드는 대륙중에서 gdpPercap의 평균이 7200이상인 대륙만 data로 출력한다는 의미이다. 
+
 다음과 같이 gdpPercap의 평균이 7200이상인 대륙의 목록을 볼 수 있다.
 ```python
 df.groupby('continent').filter(lambda x : x['gdpPercap'].mean() > 7200)['continent'].unique()
@@ -117,14 +118,14 @@ array(['Asia', 'Europe', 'Oceania'], dtype=object)
 ``` 
 
 이 번엔 'continent','year' 2개 coulmns으로 grouping을 해보고자 한다.
-```
+```python
 df.groupby(['continent','year']).filter(lambda x : x['gdpPercap'].mean() > 7200)['continent'].unique()
 >>>
 array(['Asia', 'Europe', 'Americas', 'Oceania'], dtype=object)
 ```
 continent로만 grouping 했을때와 달리, Americas이 추가 되었다.
 
-이는 Americas의 전체년도의 평균에은 7200을 넘지 못했지만, 특정년도 에서는 평균 7200을 넘은 적이 있음을 의미한다.
+이는 Americas가 전체년도의 평균은 7200을 넘지 못했지만, 특정년도 에서는 평균 7200을 넘은 적이 있음을 의미한다.
 
 Americas에서 평균 7200을 넘은 적이 있는 년도를 확인해보고자 한다.
 ```python
