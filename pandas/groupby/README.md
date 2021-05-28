@@ -1,9 +1,7 @@
 ## grouby 
 (* .tsv 자료는 부경대학교 지오데이터 분석 수업의 자료를 활용하였다.)
 
-grouby는 그룹을 결정하는데 사용된다. 
-
-grouby는 다음 3가지 프로세스를 실행가능하다.
+grouby는 그룹을 결정하는데 사용되며 다음 3가지 프로세스를 실행가능하다.
 
 **1. Splitting : 데이터를 몇가지 기준으로 나눔**
 
@@ -100,8 +98,7 @@ df['gdpPercap'].mean()
 
 자료 전체 gdp값의 평균을 확인하였다. 이 중 gdp의 평균이 7000 이상인 곳만 보고 싶을 경우 filter를 사용하여 다음과 같이 확인할 수 있다.
 ```python
-
-
+df.groupby('continent').filter(lambda x : x['gdpPercap'].mean() > 7000)
 
 
 
