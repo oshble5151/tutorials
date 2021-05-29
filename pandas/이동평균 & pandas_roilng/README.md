@@ -3,13 +3,13 @@
 
 예를 들어 다음과 같이 데이터가 있을때, 2개씩 이동평균한 결과는 다음과 같다.
 
-![image](https://user-images.githubusercontent.com/73323188/120061026-226b0b00-c096-11eb-89d5-6a3557c84920.png)
+![image](https://user-images.githubusercontent.com/73323188/120071526-cb335d80-c0ca-11eb-82e3-d30bf1840e0b.png)
 
 이동평균은 산출할 데이터의 개수가 부족할 경우는 구할 수 없다.
 
 3개씩 이동평균할 경우의 결과는 다음과 같다.
 
-![image](https://user-images.githubusercontent.com/73323188/120061082-69f19700-c096-11eb-88c4-288c4b34bcde.png)
+![image](https://user-images.githubusercontent.com/73323188/120071549-e30ae180-c0ca-11eb-974d-e50433637da4.png)
 
 즉 순차적으로 이동해가며 datg를 더해주고, 부분집합의 수만큼 나누어 주는것이 이동평균의 개념이다.
 
@@ -83,6 +83,7 @@ df.rolling(window=5,center=True).mean()
 dtype: float64
 ```
 __3) 문자열 입력: datetime 간격__
+
 window에 정수 대신 문자열을 입력하여 datetime 간격으로 이동평균을 구할수 있다.
 ```python
 ds = pd.Series([10,20,30,40,50])
