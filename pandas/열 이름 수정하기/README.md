@@ -23,6 +23,7 @@ df.columns = ['new_col1','new_col2','new_col3']
 ## rename method를 활용하여 바꾸는 법
 ```python
 df.rename(columns = {'col1':'new_col1','col2':'new_col2','col3':'new_col3'}, inplace =1)
+print(df)
 >>>
    new_col1  new_col2  new_col2
 0       0.0       0.0       0.0
@@ -30,3 +31,12 @@ df.rename(columns = {'col1':'new_col1','col2':'new_col2','col3':'new_col3'}, inp
 2       0.0       0.0       0.0
 ```
 index도 마찬가지로 바꾸어 줄 수있다.
+```python
+df.rename(columns = {0:'index1',1:'index2',2:'index3'}, inplace =1)
+print(df)
+>>>
+   new_col1  new_col2  new_col2
+index1       0.0       0.0       0.0
+index2       0.0       0.0       0.0
+index3       0.0       0.0       0.0
+```
