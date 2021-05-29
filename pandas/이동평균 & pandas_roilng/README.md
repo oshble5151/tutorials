@@ -83,7 +83,30 @@ df.rolling(window=5,center=True).mean()
 dtype: float64
 ```
 __3) 문자열 입력: datetime 간격__
-window에 문자열을 입력하여 datetime 간격으로 이동평균을 구할수 있다.
+window에 정수 대신 문자열을 입력하여 datetime 간격으로 이동평균을 구할수 있다.
+```python
+ds = pd.Series([10,20,30,40,50])
+date_index = pd.date_range("20210529",periods=5,freq='h')
+print(ds)
+>>>
+2021-05-29 00:00:00    10
+2021-05-29 01:00:00    20
+2021-05-29 02:00:00    30
+2021-05-29 03:00:00    40
+2021-05-29 04:00:00    50
+Freq: H, dtype: int64
+
+ds.rolling('3h').mean() # equal ds.rolling(window=3, min_periods=1).mean()
+>>>
+2021-05-29 00:00:00    10.0
+2021-05-29 01:00:00    15.0
+2021-05-29 02:00:00    20.0
+2021-05-29 03:00:00    30.0
+2021-05-29 04:00:00    40.0
+Freq: H, dtype: float64
 ```
+window로 문자열을 주면 min_periods는 default=1로 주어진다.
+
+'3h'옵션으로, 3개의 hour 단위로 이동평균이 구해졌다.
 
 
