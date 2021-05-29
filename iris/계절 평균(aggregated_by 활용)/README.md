@@ -49,7 +49,7 @@ AuxCoord(array(['djf', 'djf', 'mam', 'mam', 'mam', 'jja', 'jja', 'jja', 'son',
 ```
 time축에 대한 보조축인 clim_season이 추가된 것을 확인할 수 있다.
 
-clim_season 축을 기준으로 평균을 내고자 하는 경우 aggregated_by를 활용하여 가능하다.
+생성된 clim_season 축을 기준으로 평균을 내고자 하는 경우 aggregated_by를 활용하여 가능하다.
 ```python
 seasonal_mean = f.aggregated_by('clim_seasons',iris.analysis.MEAN) 
 print(seasonal_mean)
