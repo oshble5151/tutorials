@@ -11,19 +11,6 @@ grouby는 그룹을 결정하는데 사용되며 다음 3가지 프로세스를 
 
 ## Splitting
 Splitting 과정을 통해, 데이터를 간단하게 분할 할 수 있다.
-
-
-
-## Applying
-Applying단계에서는, 다음을 수행 가능하다.
-** 1. Transformation : 그룹별로 계산을 수행해준다.
-** 2. Filtration : 
-
-```python
-print(df)
-
-groupy는 열에만 적용되지만, index가 multi_index인 경우 행에도 지원된다.
-
 ```python
 import pandas as pd
 df = pd.read_csv('gapminder.tsv',sep='\t')
@@ -44,7 +31,6 @@ print(df)
 
 [1704 rows x 7 columns]
 ```
-## groupby.get_group
 get_group을 통해 보고 싶은 group만 볼 수 있다.
 ```python
 df.groupby('continent').get_group('Asia')
@@ -74,7 +60,7 @@ df.groupby(['continent','year']).get_group(('Asia',1952))
 ```
 grouping이 2개 일때는 tuple로 값을 넣어줘야 함에 유의해야한다.
 
-## grouping한 자료에서 특정 열만 보고 싶을 경우
+get_group는 DataFrame
 ```python
 df.groupby(['continent','year']).get_group(('Asia',1952))['gdpPercap']
 >>>
@@ -85,7 +71,11 @@ df.groupby(['continent','year']).get_group(('Asia',1952))['gdpPercap']
 1668       781.717576
 Name: gdpPercap, dtype: float64
 ```
-## groupby.filter
+
+## Applying
+Applying단계에서는, 다음을 수행 가능하다.
+** 1. Transformation : 그룹별로 계산을 수행해준다.
+** 2. Filtration : 기준에 만족하는 그룹만 남기고 filtering 해준다.
 
 gdp의 평균을 다음과 같이 구할 수 있다.
 ```python 
