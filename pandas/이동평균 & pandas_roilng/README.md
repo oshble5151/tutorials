@@ -31,6 +31,8 @@ dtype: float64
 
 산출할 데이터의 개수보다 데이터의 개수가 작은 부분집합의 경우, Nan값이 지정된다.
 
+__1) min_periods__
+
 min_periods 인수를 활용하면 산출할 데이터의 갯수를 부분집합내의 data 개수(Pn)에 맞춰주어 모든 부분집합에 대해 값을 계산할 수있다.
 
 ```python
@@ -43,6 +45,8 @@ test.rolling(window=3,min_periods=1 ).mean() # Pn이1개일 떄도 계산가능
 4    40.0
 ```
 Pn이 1개 일때는 데이터를 1개, Pn이 2개일 때는 데이터를 2개 사용하여 이동평균이 계산되었다.
+
+__2) center__
 
 center을 사용하면, 결과를 window의 중간에 지정해준다.
 ```python
@@ -78,3 +82,8 @@ df.rolling(window=5,center=True).mean()
 11      NaN
 dtype: float64
 ```
+__3) 문자열 입력: datetime 간격__
+window에 문자열을 입력하여 datetime 간격으로 이동평균을 구할수 있다.
+```
+
+
