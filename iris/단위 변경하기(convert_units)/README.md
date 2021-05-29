@@ -7,7 +7,7 @@ file.units
 >>>
 Unit('deg_k')
 ```
-__1) unit attribute로 단위를 변환 __
+__1) unit attribute로 단위를 변환__
 
 속성에 다른 유닛값을 지정하는 방법이 있다. 이경우 데이터값은 변환되지 않는다.
 ```python
@@ -25,7 +25,7 @@ Unit('deg_c')
 ```
 units은 'deg_c'로 바뀌었지만 데이터값은 그대로 Kelvin온도의 값이다.
 
-__2) convert_units method로 단위를 변환 __
+__2) convert_units method로 단위를 변환__  
 
 convert_units method를 사용해서 units을 바꾸면 데이터의 값도 자동으로 변환된다.
 
@@ -39,7 +39,7 @@ masked_array(
           -29.052877, -29.052877],
          [-28.086798, -28.140905, -28.196142, ..., -27.931158,
           -27.981924, -28.033804], ...
-deg_c
+Unit('deg_c')
 ```
 
 
