@@ -12,6 +12,9 @@ print(_)
 >>>
 DimCoord([1981-01-16 12:00:00], bounds=[[1981-01-01 00:00:00, 1981-02-01 00:00:00]],...
 ```
+큐브를 생성할 때, print(사용자 생성큐브)로 time을 datetime 으로 보기 위해서는 cf_units을 사용하여 축 단위를 지정 해야한다. 
+(-> [cube 생성](https://github.com/oshble5151/tutorials/tree/master/iris/cube%20%EC%83%9D%EC%84%B1))
+
 
 2) datetime module을 사용하는 방법
 ```python
