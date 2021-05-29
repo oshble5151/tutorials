@@ -13,7 +13,9 @@ DimCoord([2001-01-16 12:00:00, 2001-02-15 00:00:00, 2001-03-16 12:00:00,
        2001-10-16 12:00:00, 2001-11-16 00:00:00, 2001-12-16 12:00:00], ...
 (12,90,144)
 ```
-(iris에서는 time 축을 print하면 datetime형식으로 변환하여 출력해준다.)
+(iris에서는 time 축을 print하면 datetime형식으로 변환하여 출력해준다. [Julian -> gregorian으로 변경하기](https://github.com/oshble5151/tutorials/tree/master/Julian%20-%3E%20gregorian%EC%9C%BC%EB%A1%9C%20%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0)
+)
+
 
 12달의 위경도 90 by 144의 자료가 들어있음을 확인할 수 있다.
 
