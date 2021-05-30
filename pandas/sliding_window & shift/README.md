@@ -87,6 +87,6 @@ df.shift(freq='2h')
 2021-01-01 06:00:00  NaN  NaN  NaN
 2021-01-01 07:00:00  NaN  NaN  NaN
 ```
-index만 shift되었다.
+index만 2시간 간격으로 shift되었다.
 
 shift는 axis인수를 활용하여 index도 shift 시킬수 있다.
