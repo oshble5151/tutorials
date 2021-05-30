@@ -1,6 +1,15 @@
-# pandas shift
+# sliding window
 
-shift를 이용하면, 열을 아래 방향으로 이동시킬 수 있다.
+sliding window는 두 포인터의 처음과 끝이 동일한 간격을 가지고 이동하는 것이다.
+
+동일한 간격의 window가 slide 하며 배열의 일정 범위의 값을 비교할 때 유용한 알고리즘 이다.
+
+시작점과 끝점의 두 포인터가 같은 간격으로 이동한다는 점에서, 두 포인터가 독립적으로 움직이는 two pointer 알고리즘과 차이가 있다.
+
+# shift
+pandas의 shift를 이용하면, sliiding window를 구현 할 수 있다.
+
+shift를 사용하면 dataframe이 하나의 window가 되어 sliding 시킬 수 있다.
 
 이때 빈 data 위치는 Nan값으로 채워진다.
 ```python
