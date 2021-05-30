@@ -24,7 +24,7 @@ df.shift(1)
 4  NaN  NaN  NaN
 5  NaN  NaN  NaN
 ```
-__1) period
+__1) period__ 
 
 period로 이동시킬 간격을 지정 가능 하다.
 ```python
@@ -38,7 +38,7 @@ df.shift(2)
 4  7.0  8.0  9.0
 5  NaN  NaN  NaN
 ```
-__2) fill_value
+__2) fill_value__ 
 
 fill_value를 지정하여 Nan값 대신 다른 값으로 빈 행을 채워줄 수 있다.
 ```python
@@ -53,7 +53,7 @@ df.shift(2,fill_value=0)
 3  NaN  NaN  NaN
 ```
 
-__2) freq 
+__2) freq__ 
 
 freq는 index가 datetime_index이고 index만 shift 시키고 싶을 때 사용한다.
 
