@@ -52,6 +52,7 @@ expolation = iris.analysis.Linear(extrapolation_mode='mask')
 expolation_portion_data = portion_grid_data(global_grid_data,expolation)
 ```
 expolation_portion_data를 plot 해보면 다음과 같이 외삽 범위가 전부 masking 처리 된것을 확인 할 수 있다.
+
 ![image](https://user-images.githubusercontent.com/73323188/120096163-d5099f00-c164-11eb-953e-67a36613883f.png)
 
 
