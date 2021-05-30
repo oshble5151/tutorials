@@ -53,7 +53,7 @@ df.shift(2,fill_value=0)
 3  NaN  NaN  NaN
 ```
 
-__2) freq__ 
+__3) freq__ 
 
 freq는 index가 datetime_index이고 index만 shift 시키고 싶을 때 사용한다.
 
