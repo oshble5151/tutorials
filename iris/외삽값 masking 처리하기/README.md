@@ -47,6 +47,16 @@ plt.show()
 # None 값으로 외삽하여 전 격자에 plot 하기
 
 regrid의 extrapolation_mode 인수를 사용하면, 일부격자의 data를 전 지구격자에 plot 할 수 있다.
+
+__expolation option__ 
+
+1. nan
+
+2. error
+
+3. mask
+
+
 ```python
 expolation = iris.analysis.Linear(extrapolation_mode='mask')
 
@@ -55,5 +65,4 @@ expolation_portion_data = portion_grid_data(global_grid_data,expolation)
 expolation_portion_data를 plot 해보면 다음과 같이 외삽 범위가 전부 masking 처리 된것을 확인 할 수 있다.
 
 ![image](https://user-images.githubusercontent.com/73323188/120096163-d5099f00-c164-11eb-953e-67a36613883f.png)
-
 
