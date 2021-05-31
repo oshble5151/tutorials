@@ -77,3 +77,18 @@ print(new_predict.size)
 iris에서는 regrid를 활용해 다른 자료의 수평 격자를 이용해서, 좀 더 간단하게 interpolation 할 수있다. 
 
 interpolation method는 샘플 point를 기반으로 내삽 한다는 점에서 regrid와 차이가 있다.
+
+```python
+observe_data = iris.load_cube('era_1981.nc','t2m') #240*480 size
+predict_data = iris.load_cube('atmos_month_1981.nc','tas') #90*144 size
+
+new_predict = predict_data.regrid(observe_data, iris.analysis.Linear())
+>>>
+<iris 'Cube' of temperature at 2 m / (deg_k) (time: 12; latitude: 241; longitude: 480)>
+```
+
+regrid의 scheme을 iris.analysis.AreaWeighted로 주면, 지역가중치를 유지한채로 regriding 가능하다.
+```python
+new_predict = predict_data.regrid(observe_data, iris.analysis.AreaWeighted(mdtol=0.5))
+
+
