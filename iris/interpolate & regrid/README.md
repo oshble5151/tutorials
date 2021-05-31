@@ -90,5 +90,4 @@ new_predict = predict_data.regrid(observe_data, iris.analysis.Linear())
 regrid의 scheme을 iris.analysis.AreaWeighted로 주면, 지역가중치를 유지한채로 regriding 가능하다.
 ```python
 new_predict = predict_data.regrid(observe_data, iris.analysis.AreaWeighted(mdtol=0.5))
-
-
+```
