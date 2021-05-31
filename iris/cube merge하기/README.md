@@ -60,7 +60,10 @@ unknown / (unknown)                 (time: 3; latitude: 3; longitude: 3)
 ```
 위와 같이 scalar coordination 이었던 time이 Dimension coordination으로 변환 되었다.
 
-## merge_cube
+## merge & merge_cube
+
+__1) merge __
+
 merge를 수행하면 cube_list에 들어있는 cube 중 merge가 가능한것만 수행되고, 가능하지 않을 경우 그대로 남아있게 된다.
 
 이 예시를 보기 위해, 다음과 같이 scalar 축이 지정 되어있지 않은 cube를 포함시켜 merge 해보려 한다.
@@ -82,6 +85,8 @@ cube_list2.merge()
 위와 같이 file1과 file2는 scalar 축이 같으므로 merge되었지만, scalar 축이 없는 file4는 merge되지 않은 것을 확인 할 수 있다.
 
 merge의 결과로 출력된 list에는 병합된것과 되지 않은 것이 모두 요소로서 포함되어있다. 
+
+__1) merge_cube __
 
 merge_cube()는, merge 결과로 나온 list의 요소가 하나일 때만 출력해준다.
 
