@@ -73,3 +73,7 @@ print(new_predict.size)
 
 90 * 144 해상도 자료가 241 * 480 해상도의 자료가 되었다.
 
+# iris - regrid
+iris에서는 regrid를 활용해 다른 자료의 수평 격자를 이용해서, 좀 더 간단하게 interpolation 할 수있다. 
+
+interpolation method는 샘플 point를 기반으로 내삽 한다는 점에서 regrid와 차이가 있다.
