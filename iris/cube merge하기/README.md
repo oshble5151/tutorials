@@ -5,7 +5,7 @@ merge는 scalar 축을 기준으로 다수의 cube를 하나의 cube로 합쳐�
 
 다음 그림과 같이 3개의 큐브가 time이라는 scalar coordination을 가지고 있을때, 하나의 파일로 합쳐줄수 있다. 
 
-![image](https://user-images.githubusercontent.com/73323188/120138542-a1d11980-c211-11eb-8dda-fd83eddaf25e.png)
+![image](https://user-images.githubusercontent.com/73323188/120179280-52a4dc00-c245-11eb-9b0e-0f0cb466b575.png)
 
 iris의 merge는 각각의 큐브가 가지고 있는 동일한 이름의 scalar coordination을 Dimention coordination으로 바꿔주어 차원을 확장 시켜준다.
 
@@ -107,4 +107,42 @@ time scalar축이 없다는 오류가 발생하였다.
 
 이와 같이 merge_cube를 사용하면, merge가 되지 않는 이유를 파악하는데 유용하다.
 
+# concatenate
+
+concatenate는 차원을 증가시키지는 않고, 좌표의 범위를 증가시킨다.
+
+다음 그림과 같이 두 큐브가 연속되는 각각 다른 시간축을 가질 때 , concatenate로 두 큐브로 합쳐 시간축을 확장시켜줄 수 있다.
+
+```python
+repr(a) ; repr(b) ; repr(c)
+>>>
+"<iris 'Cube' of unknown / (unknown) (time: 3; latitude: 3; longitude: 3)>"
+"<iris 'Cube' of unknown / (unknown) (time: 3; latitude: 3; longitude: 3)>"
+"<iris 'Cube' of unknown / (unknown) (time: 3; latitude: 3; longitude: 3)>"
+
+file1.coord('time').points
+file2.coord('time').points
+file3.coord('time').points
+>>>
+array([48885, 48886, 48887])
+array([48888, 48889, 48890])
+array([48891, 48892, 48893])  # 각 큐브가 연속된 time 축을 가짐
+
+cube_list = iris.cube.Cube([file1, file2, file3])
+cube_list.concatenate()
+
+conca_cube, = cube_list.concatenate()
+
+print(conca_cube)
+print(con_cube.coord('time'))
+>>>
+<iris 'Cube' of unknown / (unknown) (time: 9; latitude: 3; longitude: 3)>
+DimCoord(array([48885, 48886, 48887, 48888, 48889, 48890, 48891, 48892, 48893]), ...
+```
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/73323188/120181824-90efca80-c248-11eb-9b0a-c485499f6cd8.png)
 
