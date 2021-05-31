@@ -85,7 +85,7 @@ merge의 결과로 출력된 list에는 병합된것과 되지 않은 것이 모
 
 merge_cube()는, merge 결과로 나온 list의 요소가 하나일 때만 출력해준다.
 
-즉 merge하려는 cube_list내부의 모든 요소가 merge 될때만 오류가 발생하지 않는다.
+즉, merge하려는 cube_list내부의 모든 요소가 merge 가능 할때만 오류가 발생하지 않는다.
 
 ```python
 
@@ -97,5 +97,8 @@ cube_list2.merge_cube()
 MergeError: failed to merge into a single cube.
   Coordinates in cube.aux_coords (scalar) differ: time.
 ```
+time scalar축이 없다는 오류가 발생하였다.
+
+이와 같이 merge_cube를 사용하면, merge가 되지 않는 이유를 파악하는데 유용하다.
 
 
