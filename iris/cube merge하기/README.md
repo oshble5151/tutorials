@@ -113,6 +113,9 @@ concatenate는 차원을 증가시키지는 않고, 좌표의 범위를 증가�
 
 다음 그림과 같이 두 큐브가 연속되는 각각 다른 시간축을 가질 때 , concatenate로 두 큐브로 합쳐 시간축을 확장시켜줄 수 있다.
 
+![image](https://user-images.githubusercontent.com/73323188/120181824-90efca80-c248-11eb-9b0a-c485499f6cd8.png)
+
+
 ```python
 repr(a) ; repr(b) ; repr(c)
 >>>
@@ -139,10 +142,3 @@ print(con_cube.coord('time'))
 <iris 'Cube' of unknown / (unknown) (time: 9; latitude: 3; longitude: 3)>
 DimCoord(array([48885, 48886, 48887, 48888, 48889, 48890, 48891, 48892, 48893]), ...
 ```
-
-
-
-
-
-![image](https://user-images.githubusercontent.com/73323188/120181824-90efca80-c248-11eb-9b0a-c485499f6cd8.png)
-
