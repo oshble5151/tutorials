@@ -62,7 +62,7 @@ unknown / (unknown)                 (time: 3; latitude: 3; longitude: 3)
 
 ## merge & merge_cube
 
-__1) merge __
+__1)merge__ 
 
 merge를 수행하면 cube_list에 들어있는 cube 중 merge가 가능한것만 수행되고, 가능하지 않을 경우 그대로 남아있게 된다.
 
@@ -86,7 +86,7 @@ cube_list2.merge()
 
 merge의 결과로 출력된 list에는 병합된것과 되지 않은 것이 모두 요소로서 포함되어있다. 
 
-__1) merge_cube __
+__2)merge_cube__
 
 merge_cube()는, merge 결과로 나온 list의 요소가 하나일 때만 출력해준다.
 
