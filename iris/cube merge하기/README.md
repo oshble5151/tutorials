@@ -38,5 +38,27 @@ unknown / (unknown)                 (latitude: 3; longitude: 3)
           longitude                          -             x
      Scalar coordinates:
           time: 2021-06-02
+```
+3개의 큐브는 같은 name의 scalar 축을 가지고 있고, 이는 cube들의 time scalar coordination은 각각 다른 시간 meta data를 갖고있다.
+
+같은 scalar coordination을 가지고 있지 않은 경우, cube를 merge 시킬 수 없다.
+
+```python
+cube_list = iris.cube.Cube([a,b,c])
+cube_list.merge()
 >>>
+[<iris 'Cube' of unknown / (unknown) (-- : 3; latitude: 3; longitude: 3)>]
+
+merge_cube, = cube_list.merge()
+
+print(merge_cube)
+>>>
+unknown / (unknown)                 (-- : 3; latitude: 3; longitude: 3)
+     Dimension coordinates:
+          latitude                      -            x             -
+          longitude                     -            -             x
+     Auxiliary coordinates:
+          time                          x            -             -
+```
+
 
