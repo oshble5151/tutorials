@@ -69,3 +69,7 @@ print(new_predict.size)
 ![image](https://user-images.githubusercontent.com/73323188/119834710-29c9d180-bf3b-11eb-84c3-68275166d907.png)
 ![image](https://user-images.githubusercontent.com/73323188/119834794-3ea66500-bf3b-11eb-918d-c69e852aaa77.png)
 
+위:interpolate 전 / 아래: interpolate 후
+
+90 * 144 해상도 자료가 241 * 480 해상도의 자료가 되었다.
+
