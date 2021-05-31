@@ -142,3 +142,4 @@ print(con_cube.coord('time'))
 <iris 'Cube' of unknown / (unknown) (time: 9; latitude: 3; longitude: 3)>
 DimCoord(array([48885, 48886, 48887, 48888, 48889, 48890, 48891, 48892, 48893]), ...
 ```
+concatenate와 concatenate_cube의 차이는 merge에서와 같다.
