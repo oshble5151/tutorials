@@ -8,10 +8,16 @@ plt.show()
 ![image](https://user-images.githubusercontent.com/73323188/120279027-ef708380-c2f0-11eb-9a72-b369dbfb2d3f.png)
 
 # **kwargs 언패킹으로 인수 넣기
+
+plot의 kwargs은 다음과 같은 것들이 존재한다.
+
+![image](https://user-images.githubusercontent.com/73323188/120281720-3f047e80-c2f4-11eb-82c5-78b0bcfb9dde.png)
+
+다음과 같이 **을 사용하여 unpacking하여 함수에 인수로 전달 할수 있다. 
 ```python
 xarr = np.random.choice(20,(5))
 yarr = np.random.choice(20,(5))
-plt_dict = {'makers' : 'b','Line Styles' : '-'}
+plt_dict = {'marker' : 'o','linestyle' : '-','linewidth' : '10'}
 plt.plot(xarr,yarr,**plt_dict)
 >>>
 ```
