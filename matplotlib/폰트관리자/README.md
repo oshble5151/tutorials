@@ -15,11 +15,13 @@ __2)fontdict 적용__
 
 fontdict의 구성요소는 다음과 같다.
 
+폰트체와 사이즈, 색상, bold체 등의 변화를 줄 수 있다.
+
 ![image](https://user-images.githubusercontent.com/73323188/120332088-5c077480-c329-11eb-9beb-530a8c1724fc.png)
 
 ```python
 font1= {'family':'Courier New',"size":24,'color':"black"}
-font2= {'family':'Lucida Bright',"size":24,'color':"blue"}
+font2= {'family':'Lucida Bright',"size":24,'color':"blue",fontweight:'bold'}
 
 
 for i,j in zip(range(0,60,20),["A","B","C"]):
@@ -29,4 +31,4 @@ for i,j in zip(range(0,60,20),["A","B","C"]):
 plt.title('title',fontdict=font1)
 plt.xlabel("x",fontdict=font2)
 ```
-![image](https://user-images.githubusercontent.com/73323188/120334923-06809700-c32c-11eb-87bf-da54d751ccde.png)
+![image](https://user-images.githubusercontent.com/73323188/120336484-5ca20a00-c32d-11eb-9452-6dbd36da5eb0.png)
