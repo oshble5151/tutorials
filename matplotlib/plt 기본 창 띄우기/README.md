@@ -30,4 +30,4 @@ plt.subplots(2,2)
  # 2 by 2의 figure들이 한 꺼번에 배열로 반환됨
  ```
 ![image](https://user-images.githubusercontent.com/73323188/120277811-7d4b6f00-c2ef-11eb-87d2-fe8b52423cef.png)
-
+ 
