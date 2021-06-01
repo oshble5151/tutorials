@@ -29,7 +29,7 @@ anomoly_month1_30year = month1_30year_file - month1_30year_collap_time
 print(anomoly_month1_30year)
 
 STD_NAMES['temp_anolmary'] = {'canonical_units': 'K'}
-#anomoly_month1_30year.standard_name = 'surface_temperature_anomaly'
+
 anomoly_month1_30year.standard_name = 'temp_anolmary'
 
 iris.save(anomoly_month1_30year,'anomoly_30year.nc')
