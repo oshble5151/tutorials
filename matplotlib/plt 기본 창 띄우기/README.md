@@ -1,4 +1,9 @@
 ## matplotlib 창띄우기
+matplotlib은 다음과 같은 구성요소를 가진다.
+
+출처) https://matplotlib.org/stable/tutorials/introductory/usage.html#using-the-fast-style
+![image](https://user-images.githubusercontent.com/73323188/120317877-1ee7b600-c31a-11eb-8f42-91e4b07bae20.png)
+
 
 maplot의 가장 기본이 되는 figure을 띄워보고자 한다.
 
@@ -29,5 +34,6 @@ plt.subplots(2,2)
        dtype=object))
  # 2 by 2의 figure들이 한 꺼번에 배열로 반환됨
  ```
+ 
 ![image](https://user-images.githubusercontent.com/73323188/120277811-7d4b6f00-c2ef-11eb-87d2-fe8b52423cef.png)
  
