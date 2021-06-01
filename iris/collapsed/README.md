@@ -42,5 +42,15 @@ print(longitude_collapsed)
 ```
 longitude축을 collapsed한 결과는 np.mean(file,axis=2)과 동일하다.
 
+## __4) ['latitude','longitude'] 이중 축 collapsed__
+```python
+lat_lon_collapsed = file.collapsed('longitude',iris.analysis.MEAN)
+>>>
+<iris 'Cube' of temperature at 2 m / (deg_k) (time: 12)>
 
+lat_lon_collapsed.data == list(map(np.mean, file.data))
+```
+lat&lon 축으로 collapsed 한 결과는 map(np.mean,file.data)와 동일하다.
+
+각 time 축에 대해 전 격자값을 평균낸 scalar값이 반환된다.
 
