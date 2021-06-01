@@ -14,5 +14,6 @@ yarr = np.random.choice(20,(5))
 plt_dict = {'makers' : 'b','Line Styles' : '-'}
 plt.plot(xarr,yarr,**plt_dict)
 >>>
-![image](https://user-images.githubusercontent.com/73323188/120281394-db7a5100-c2f3-11eb-9966-35fc0273e11d.png)
 ```
+![image](https://user-images.githubusercontent.com/73323188/120281394-db7a5100-c2f3-11eb-9966-35fc0273e11d.png)
+
