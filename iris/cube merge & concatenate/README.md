@@ -143,3 +143,25 @@ print(con_cube.coord('time'))
 DimCoord(array([48885, 48886, 48887, 48888, 48889, 48890, 48891, 48892, 48893]), ...
 ```
 concatenate와 concatenate_cube의 차이는 merge에서와 같다.
+
+# merge error 발생 해결
+merge시 attribute가 동일하지 않은 경우 오류가 발생한다.
+
+```python
+cube_list.merge_cube()
+>>>
+iris.exceptions.MergeError: failed to merge into a single cube.
+  cube.attributes values differ for keys: 'history'
+```
+merge가 아닌 merge_cube()를 써야 오류메시지를 볼 수 있음에 주의해야한다.
+
+이 경우 equalise_attributes를 용하여 merge를 진행 할 수 있다.
+```python
+from iris.experimental.equalise_cubes import equalise_attributes
+
+equalise_attributes(cubes)
+cubes.merge_cube()
+```
+
+
+
