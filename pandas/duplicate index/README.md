@@ -77,8 +77,16 @@ a  1  4
 b  2  5
 b  3  6
 
-df.groupby(level=0).mean(0)
+df.groupby(level=0).mean()
+
+>>>
      A    B
 a  1.0  4.0
 b  2.5  5.5
+```
+행을 기준으로 중복되는 lndex의 값들이 평균되었다.
+
+열을 기준으로 중복되는 값을 탐지하고 처리하고 싶을 경우 axis 인수를 활용하면 된다.
+df.groupby(level=0, axis=1).mean()
+```
 
