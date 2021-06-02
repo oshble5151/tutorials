@@ -53,7 +53,7 @@ join
 ignore_index
 
 keys : 계층형 index(Multiindex)를 구성한다. 
--> [Multi_Indexing 기본](https://github.com/oshble5151/tutorials/tree/master/pandas/Multi_Indexing%20%EA%B8%B0%EB%B3%B8)
+-> [2) concat key를 활용하여 multi_index 생성](https://github.com/oshble5151/tutorials/tree/master/pandas/Multi_Indexing%20%EA%B8%B0%EB%B3%B8)
 
 levels
 
