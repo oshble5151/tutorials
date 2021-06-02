@@ -6,7 +6,7 @@ Multi-level indexing을 통해서 Series 및 DataFrame과 같은 저차원 데�
 MultiIndex는 grouping, selection, reshape 작업을 수행할 수 있다는 점에서 중요하다.
 
 ## Multi_Index 생성 
-##__1) tuple로 multi_indexing 생성__ 
+## __1) tuple로 multi_indexing 생성__ 
 
 multi_index를 가진 카페와 식당의 판매량과 재고량에 대한 간단한 DataFrame을 생성해보고자 한다.
 ```python
@@ -85,7 +85,7 @@ restraunt steak         7      2
 ```
 
 
-##__2) DataFrame으로  multi_indexing 생성__
+## __2) DataFrame으로  multi_indexing 생성__
 
 ```python
 index_df = index_df = pd.DataFrame({'shop':['cafe','cafe','restraunt','restraunt'], 
@@ -122,16 +122,99 @@ sale            3     5         7     0
 stock           4     6         2     1
 ```
 
+## 그외 multi_indexing 생성방법
+
+## __1) set_index__
+
+multi_index로 만들어 줄 열을 추가한뒤, set_index로 multiindex를 생성할수 있다.
+``` python
+df
+>>> 
+    0   1   2
+0   1   2   3
+1   4   5   6
+2   8   9  10
+3  11  12  13
+
+df.insert(0,'multi_index',['x','x','y','y'])  # multi_index로 분류될때 기준이 되는 name이 들어간 열을 추가.
+df.insert(1,'type',['A','A','B','B']) # multi_index로 분류될때 기준이 되는 name이 들어간 열을 추가.
+>>>
+  multi_index type   0   1   2
+0           x    A   1   2   3
+1           x    A   4   5   6
+2           y    B   8   9  10
+3           y    B  11  12  13
+
+df = df.set_index(['multi_index','type'])
+
+print(df)
+>>>
+                   0   1   2
+multi_index type
+x           A      1   2   3
+            A      4   5   6
+y           B      8   9  10
+            B     11  12  13
+
+print(df.index)
+>>>
+MultiIndex([('x', 'A'),
+            ('x', 'A'),
+            ('y', 'B'),
+            ('y', 'B')],
+           names=['multi_index', 'type'])
+
+```
 
 
+## __2) concat key__를 활용하여 multi_index 생성
 
+```python
 
+print(df1)
+>>>
+   0  1  2
+0  1  2  3
+1  4  5  6
+2  7  8  9
 
+print(df2)
+>>>
+    0   1   2
+0  10  20  30
+1  40  50  60
+2  70  80  90
 
+print(df3)
+>>>
+     0    1    2
+0  100  200  300
+1  400  500  600
+2  700  800  900
 
+df_new = pd.concat([df1,df2,df3],key = list('xyz'))
 
+>>>
+       0    1    2
+x 0    1    2    3
+  1    4    5    6
+  2    7    8    9
+y 0   10   20   30
+  1   40   50   60
+  2   70   80   90
+z 0  100  200  300
+  1  400  500  600
+  2  700  800  900
 
-
-
-
-
+print(df_new.index)
+MultiIndex([('x', 0),
+            ('x', 1),
+            ('x', 2),
+            ('y', 0),
+            ('y', 1),
+            ('y', 2),
+            ('z', 0),
+            ('z', 1),
+            ('z', 2)],
+           )
+```
