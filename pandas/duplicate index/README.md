@@ -87,14 +87,16 @@ b  2.5  5.5
 행을 기준으로 중복되는 lndex의 값들이 평균되었다.
 
 열을 기준으로 중복되는 값을 탐지하고 처리하고 싶을 경우 axis 인수를 활용하면 된다.
-df.groupby(level=0, axis=1).mean()
 
 ```python
 print(df)
+>>>
    A  B   A   B
 0  1  4  10  20
 1  2  5  20  30
 2  3  6  30  40
+
+df.groupby(level=0, axis=1).mean()
 >>>
       A     B
 0   5.5  12.0
