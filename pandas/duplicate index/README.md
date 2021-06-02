@@ -27,18 +27,26 @@ dtype: int64
 
 __2) Duplicate index Detection __
 
-index.is_unique : index혹은 columns에 
->>>python
+__index.is_unique : index혹은 columns에 중복값있는지 판별__
+```python
 s1
 a    0
 b    1
 b    2
 
 s1.index.is_unique
-
+>>>
 true
+```
 
+__index.duplicated() : index혹은 columns에 중복값있는지 판별__
 
+index attribute에 duplicated()를 사용하면 중복되는 위치를 bool값으로 보여준다.
+
+```python
+s1.index.duplicated()
+array([False, False,  True])
+```
 
 
 
