@@ -47,9 +47,38 @@ index attribute에 duplicated()를 사용하면 중복되는 위치를 bool값�
 s1.index.duplicated()
 array([False, False,  True])
 ```
+
+## 중복되는 index or columns 제거하기
+
+__1) 단순히 제거하기__
+
+boolean indexing을 이용해서 중복되는 행이나 열을 제거할 수 있다.
 ```python
+print(df)
+>>>
+   A  B
+a  1  4
+b  2  5
+b  3  6
 
+df[~df.index.duplicated()]
+>>>
+   A  B
+a  1  4
+b  2  5
+```
+__2) groupby로 중복되는 index 산술 처리__
 
+```python
+print(df)
+>>>
+   A  B
+a  1  4
+b  2  5
+b  3  6
 
-
+df.groupby(level=0).mean(0)
+     A    B
+a  1.0  4.0
+b  2.5  5.5
 
