@@ -47,9 +47,7 @@ index attribute에 duplicated()를 사용하면 중복되는 위치를 bool값�
 s1.index.duplicated()
 array([False, False,  True])
 ```
-
-
-
+```python
 
 
 
