@@ -14,7 +14,7 @@ print(df2)
 >>>
    name    job
 0  Poll  woker
-1  Gwen  woker
+1  Gwen  woker 
 2  Jack   boss
 ```
 
