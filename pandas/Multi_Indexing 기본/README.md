@@ -167,7 +167,7 @@ MultiIndex([('x', 'A'),
 ```
 
 
-## __2) concat key__를 활용하여 multi_index 생성
+## __2) concat key를 활용하여 multi_index 생성__ 
 
 ```python
 
