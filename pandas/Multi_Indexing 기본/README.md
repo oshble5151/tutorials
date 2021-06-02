@@ -1,11 +1,13 @@
-## Multi_Indexing
+# Multi_Indexing
 Multi-level indexing은 고차원의 데이터로 작업할 때 정교한 데이터 분석이 가능하게 해준다는 장점이 있다.
 
 Multi-level indexing을 통해서 Series 및 DataFrame과 같은 저차원 데이터 구조에 임의적의 차원과 데이터를 저장하고 조작할 수 있다.
 
 MultiIndex는 grouping, selection, reshape 작업을 수행할 수 있다는 점에서 중요하다.
 
-## tuple로 multi_indexing 생성
+## Multi_Index 생성 
+##__1) tuple로 multi_indexing 생성__ 
+
 multi_index를 가진 카페와 식당의 판매량과 재고량에 대한 간단한 DataFrame을 생성해보고자 한다.
 ```python
 import pandas as pd
@@ -83,7 +85,8 @@ restraunt steak         7      2
 ```
 
 
-## DataFrame으로  multi_indexing 생성
+##__2) DataFrame으로  multi_indexing 생성__
+
 ```python
 index_df = index_df = pd.DataFrame({'shop':['cafe','cafe','restraunt','restraunt'], 
                                     'product':['americano','latte','steak','pasta']})
