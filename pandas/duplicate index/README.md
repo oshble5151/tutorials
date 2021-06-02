@@ -107,3 +107,49 @@ df.groupby(level=0, axis=1).mean()
 ## 생성 시 중복되는 label 허락 안하기 
 set_flags를 활용하여 중복되는 label을 가질 경우 오류를 발생하게 할 수 있다.
 
+```python
+
+df = pd.DataFrame({"A": [0, 0, 2, 3]}, index=[0,0,1,2]).set_flags( allows_duplicate_labels=False)
+>>>
+Traceback (most recent call last):
+  File "<pyshell#41>", line 1, in <module>
+    df2 = pd.DataFrame({"A": [0, 1, 2, 3]}, index=[0,0,2,3]).set_flags( allows_duplicate_labels=False)
+38\lib\site-packages\pandas\core\indexes\base.py", line 471, in _maybe_check_unique
+                            ...
+    raise DuplicateLabelError(msg)
+pandas.errors.DuplicateLabelError: Index has duplicates.
+      positions
+label          
+0        [0, 1]
+```
+속성에 bool값을 주어 중복값 허용여부를 바꿀 수도 있다.
+
+insert를 활용해 중복값 허용 여부가 제대로 적용되는지 확인해볼 수 있다.
+```python
+print(df)
+   A
+0  0
+1  1
+2  2
+3  3
+
+df2.flags.allows_duplicate_labels = False
+df2.flags.allows_duplicate_labels
+>>>
+False
+```
+df2.flags.allows_duplicate_labels = False를 통해 중복되는 label을 허용하지 않았다.
+
+insert의 중복되는 name의 열의 추가를 허용해주는 allow_duplicates=True를 허용해서 열을 추가하려고 하면 다음과 같은 결과가 발생한다.
+```python
+df.insert(1,'A',[0,1,2,3],allow_duplicates=True)
+>>>
+Traceback (most recent call last):
+  File "<pyshell#48>", line 1, in <module>
+    df.insert(1,'A',[0,1,2,3],allow_duplicates=True)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python38\lib\site-packages\pandas\core\frame.py", line 3757, in insert
+    raise ValueError(
+ValueError: Cannot specify 'allow_duplicates=True' when 'self.flags.allows_duplicate_labels' is False.
+```
+allow_duplicates=True로 중복되는 열의 추가를 허용했음에도 불구하고, flags.allows_duplicate_labels가 False라서 수행할 수 없다는 오류를 볼 수 있다.
+
