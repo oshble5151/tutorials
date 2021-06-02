@@ -1,6 +1,6 @@
 # Duplicate index
 
-__1) 중복 열 indexing__
+## 중복 열 indexing
 
 Dataframe은 중복되는 열 또는 행을 가질 수 있다.
 
@@ -25,9 +25,9 @@ b    2
 dtype: int64
 ```
 
-__2) Duplicate index Detection __
+## Duplicate index Detection 
 
-__index.is_unique : index혹은 columns에 중복값있는지 판별__
+__1) index.is_unique : index혹은 columns에 중복값있는지 판별__
 ```python
 s1
 a    0
@@ -39,7 +39,7 @@ s1.index.is_unique
 true
 ```
 
-__index.duplicated() : index혹은 columns에 중복값있는지 판별__
+__2) index.duplicated() : index혹은 columns에 중복값있는지 판별__
 
 index attribute에 duplicated()를 사용하면 중복되는 위치를 bool값으로 보여준다.
 
