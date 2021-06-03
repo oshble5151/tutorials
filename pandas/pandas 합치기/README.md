@@ -46,34 +46,16 @@ df_new = pd.concat([df2,df3], ignore_index =1)
 5  Jack   boss
 ```
 
-__다양한 인수들__
+__concat 다양한 인수들__
 
-join
+join : ‘inner’, ‘outer’ => 추
 
 ignore_index
 
 keys : 계층형 index(Multiindex)를 구성한다. 
 -> [2) concat key를 활용하여 multi_index 생성](https://github.com/oshble5151/tutorials/tree/master/pandas/Multi_Indexing%20%EA%B8%B0%EB%B3%B8)
 
-levels
-
-
-
-append method로 동일하게 합쳐줄 수 있다.
-```
-df2.append(df3,ignore_index=1)
->>>
-   name    job
-0  Jack   boss
-1  Mary  woker
-2  Cony   boss
-3  Poll  woker
-4  Gwen  woker
-5  Jack   boss
-```
-
-
-다음과 같이 axis 인수로 행 기준으로 합치는 것도 가능하다.
+axis : 병합할 축 방향 설정
 ```python
 print(df4)
 >>>
@@ -89,6 +71,56 @@ pd.concat([df2,df4],axis=1)
 1  Mary  woker    22    Japan
 2  Cony   boss    35      U.S
 ``` 
+
+verify_integrity = 새 연결 축에 중복이 포함되어 있는지 확인
+```python
+print(df1)
+>>>
+   0  1  2
+0  1  2  3
+1  4  5  6
+print(df2)
+>>>
+    0   1   2
+2   4   5   6
+3  40  50  60
+
+pd.concat([a,b],verify_integrity=True)
+>>>
+    0   1   2
+0   1   2   3
+1   4   5   6
+2   4   5   6
+3  40  50  60
+```
+다음과 같이 verify_integrity인수를 통해 df1과 df2의 index가 중복 될 경우, concat이 되지 않게 할 수 있다.
+```python
+b.index=[1,2]
+pd.concat([a,b],verify_integrity=True)
+>>>
+... ValueError: Indexes have overlapping values: Int64Index([1], dtype='int64')
+
+levels
+
+다음과 같이 axis 인수로 행 기준으로 합치는 것도 가능하다.
+
+
+## append 
+append method로 동일하게 합쳐줄 수 있다.
+```
+df2.append(df3,ignore_index=1)
+>>>
+   name    job
+0  Jack   boss
+1  Mary  woker
+2  Cony   boss
+3  Poll  woker
+4  Gwen  woker
+5  Jack   boss
+```
+
+
+
 ## merge
 pandas는 간단하게 합칠수 있는 concat, append 외에도 merge를 이용하여 자료를 합칠 수 있다.
 ```python
