@@ -70,5 +70,7 @@ df['deviation'] = df['scores'].values - df.groupby('date').transform(sub_mean).i
 8  2021-06-05 00:00:00   Ann      60   4.666667
 ```
 분산의 data가 담긴 열이 잘 추가 되었음을 확인 할 수 있다.
+
 df.groupby('date').transform(sub_mean)은 DataFrame이므로, iloc를 사용해 Series로 변환시켜줘야 빼기 연산이  유의 해야한다.
+
 __2-2) value 열 추가__
