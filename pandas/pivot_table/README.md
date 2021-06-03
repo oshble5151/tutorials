@@ -38,4 +38,37 @@ date
 2021-06-05   60    38   68
 ```
 ## __2) pivot table values가 2개인 경우__ 
+__2-1) value 열 추가__
+먼저 각 날짜의 3명의 학생의 성적 평균과의 편차의 data가 담긴 열 'deviation'을 추가하려 한다.
+```python
 
+df.groupby('date').transform(np.mean) #각 날짜의 평균 data열 생성
+print(df.groupby('date').transform(np.mean))
+>>>
+     scores 
+0  63.666667
+1  70.666667
+2  55.333333
+3  63.666667 
+4  70.666667
+5  55.333333
+6  63.666667
+7  70.666667
+8  55.333333
+
+df['deviation'] = df['scores'].values - df.groupby('date').transform(sub_mean).iloc[:,0]
+>>>
+                  date  name  scores  deviation
+0  2021-06-03 00:00:00   Tom      77  13.333333
+1  2021-06-04 00:00:00   Tom      34 -36.666667
+2  2021-06-05 00:00:00   Tom      68  12.666667
+3  2021-06-03 00:00:00  Mary      15 -48.666667
+4  2021-06-04 00:00:00  Mary      79   8.333333
+5  2021-06-05 00:00:00  Mary      38 -17.333333
+6  2021-06-03 00:00:00   Ann      99  35.333333
+7  2021-06-04 00:00:00   Ann      99  28.333333
+8  2021-06-05 00:00:00   Ann      60   4.666667
+```
+분산의 data가 담긴 열이 잘 추가 되었음을 확인 할 수 있다.
+df.groupby('date').transform(sub_mean)은 DataFrame이므로, iloc를 사용해 Series로 변환시켜줘야 빼기 연산이  유의 해야한다.
+__2-2) value 열 추가__
