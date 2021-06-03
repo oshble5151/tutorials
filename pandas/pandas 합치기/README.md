@@ -48,7 +48,35 @@ df_new = pd.concat([df2,df3], ignore_index =1)
 
 __concat 다양한 인수들__
 
-join : ‘inner’, ‘outer’ => 추
+join : ‘inner’, ‘outer’ => 교집합, 합집합 중 어떤식으로 출력할 지 설정
+```python
+print(df1)
+>>>
+   0  1  2
+0  1  2  3
+1  4  5  6
+print(df2)
+>>>
+    0   1   2
+1   4   5   6
+2  40  50  60
+
+pd.concat([df1,df2], join ='inner',axis=1) # 행기준 교집합의 data만 출력됨
+>>>
+   0  1  2  0  1  2
+1  4  5  6  4  5  6
+
+pd.concat([df1,df2], axis=1)  # 두 DataFrame의 index의 최대 최소 범위 까지 확장 된 뒤 합집합으로 출력된다.
+     0    1    2     0     1     2
+0  1.0  2.0  3.0   NaN   NaN   NaN
+1  4.0  5.0  6.0   4.0   5.0   6.0
+2  NaN  NaN  NaN  40.0  50.0  60.0
+```
+
+
+
+
+
 
 ignore_index
 
@@ -93,17 +121,15 @@ pd.concat([a,b],verify_integrity=True)
 2   4   5   6
 3  40  50  60
 ```
+
 다음과 같이 verify_integrity인수를 통해 df1과 df2의 index가 중복 될 경우, concat이 되지 않게 할 수 있다.
 ```python
 b.index=[1,2]
 pd.concat([a,b],verify_integrity=True)
 >>>
 ... ValueError: Indexes have overlapping values: Int64Index([1], dtype='int64')
-
+```
 levels
-
-다음과 같이 axis 인수로 행 기준으로 합치는 것도 가능하다.
-
 
 ## append 
 append method로 동일하게 합쳐줄 수 있다.
