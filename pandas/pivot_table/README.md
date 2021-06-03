@@ -73,4 +73,16 @@ df['deviation'] = df['scores'].values - df.groupby('date').transform(sub_mean).i
 
 df.groupby('date').transform(sub_mean)은 DataFrame이므로, iloc를 사용해 Series로 변환시켜줘야 빼기 연산이 가능함에 유의 해야한다. 
 
-__2-2) value 열 추가__
+__2-2) values가 2개인 pivot table 출력__
+
+```python
+df.pivot(index="date", columns="name")
+>>>
+              scores           deviation                      
+name          Ann Mary Tom        Ann       Mary        Tom
+date                                                       
+2021-06-03     99   15  77  35.333333 -48.666667  13.333333
+2021-06-04     99   79  34  28.333333   8.333333 -36.666667
+2021-06-05     60   38  68   4.666667 -17.333333  12.666667
+```
+pivot 함수에서 values 인수가 누락될 경우, 모든 values가 pivot table에 나타난다.
