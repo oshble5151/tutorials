@@ -129,6 +129,25 @@ pd.concat([a,b],verify_integrity=True)
 >>>
 ... ValueError: Indexes have overlapping values: Int64Index([1], dtype='int64')
 ```
+concat은 철저하게 index를 기준으로 확장하거나 생략하여 합쳐준다.
+```python
+pd.concat([a,b],axis=1)
+>>>
+     0    1    2     0     1     2
+0  1.0  2.0  3.0   NaN   NaN   NaN
+1  4.0  5.0  6.0   4.0   5.0   6.0
+2  NaN  NaN  NaN  40.0  50.0  60.0
+```
+reindex로 df2의 index 범위를 감소시킨뒤 concat하면 다음과 같다.
+```python
+pd.concat([a,b.reindex(a.index)],axis=1)
+>>>
+   0  1  2    0    1    2
+0  1  2  3  NaN  NaN  NaN
+1  4  5  6  4.0  5.0  6.0
+```
+이처럼 concat은 공통으로 존재하는 index 혹은 columns이 아닐 경우 None값으로 채워준다.
+
 levels
 
 ## append 
