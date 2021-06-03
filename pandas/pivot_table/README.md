@@ -31,6 +31,8 @@ df[df["name"] == "Tom"]
 ```
 pandas의 pivot을 사용하면 날짜에 따른 4학생의 점수를 다음과 같이 일목요연하게 확인 가능하다.
 ```python
+df.pivot(index="date", columns="name",values="scores")
+>>>
 name        Ann  Mary  Tom
 date                      
 2021-06-03   99    15   77
