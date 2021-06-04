@@ -170,7 +170,7 @@ df.fillna('_',limit =1 )
 ```
 첫 번째 None값만 바뀐 것을 확인할 수 있다.
 
-##__datetime NaT__
+## __datetime NaT__
 
 datetime값은 None값 처리 할 경우 결측값은 NaT로 처리된다.
 ```python
