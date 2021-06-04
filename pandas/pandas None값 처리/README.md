@@ -172,7 +172,7 @@ fillna에는 method라는 인수가 있다.
 
 method를 활용하여, 인접해 있는 값으로 None 값을 처리 할 수 있다.
 
-method인수 'ffill'는 forward fill을 의미하며, 앞의 값으로 None값을 채워준다.
+인수 'ffill'는 forward fill을 의미하며, 앞의 값으로 None값을 채워준다. (pad도 )
 
 ```python
 print(df)
@@ -228,3 +228,47 @@ df.fillna('_',limit =1 )
 5   Jack  woker  NaN
 ```
 첫 번째 None값만 바뀐 것을 확인할 수 있다.
+
+## 누락값 dict or Series로 채우기
+
+fillna는 dict나 Series또한 인수로 받을 수 있다.
+
+이때 인수가 되는 Series의 index는 값이 채워질 대상이 되는 DataFrame의 열과 일치해야 한다.
+
+```python
+print(df)
+>>>
+    name    job   age
+0  Tomas   boss  30.0
+1   Jane  woker   NaN
+2   Mark   boss  33.0
+3   Evan   boss  35.0
+4   Luvy  woker  20.0
+5   Jack  woker   NaN
+```
+다음과 같이 age열의 누락값을 평균값으로 채워줄 수 있다.
+```python
+df.age.fillna(df['age'].mean(),inplace=True)
+print(df)
+>>>
+    name    job   age
+0  Tomas   boss  30.0
+1   Jane  woker  29.5
+2   Mark   boss  33.0
+3   Evan   boss  35.0
+4   Luvy  woker  20.0
+5   Jack  woker  29.5
+```
+
+where method를 사용하여 동일한 작업을 수행할 수 있다.
+```python
+df.where(pd.notna(dff), dff.mean(), axis=1)
+>>>
+    name    job   age
+0  Tomas   boss  30.0
+1   Jane  woker  29.5
+2   Mark   boss  33.0
+3   Evan   boss  35.0
+4   Luvy  woker  20.0
+5   Jack  woker  29.5
+```
