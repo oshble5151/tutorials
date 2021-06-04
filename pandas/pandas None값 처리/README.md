@@ -325,7 +325,9 @@ df.dropna() #axis=1
 4   Luvy  woker
 5   Jack  woker
 ```
-1) how 인수를 통해 None값이 하나라도 있을 경우, 혹은 모든값이 None값일 경우를 선택해서 제거 가능하다.
+__1) how__
+
+how 인수를 통해 None값이 하나라도 있을 경우, 혹은 모든값이 None값일 경우를 선택해서 제거 가능하다.
 ```python
 print(df)
 >>>
@@ -348,3 +350,30 @@ df.dropna(axis=1,how='all')
 5   Jack  woker   NaN   80.0
 ```
 how='all'로 인해 모든 값이 None일 경우의 열만 제거 되었다.
+__2)subset__
+subset으로 None값을 처리할 열을 지정 할수 있다.
+```python
+df
+>>>
+    name    job   age    pay test_drop_na
+0  Tomas   boss   NaN  100.0         None
+1   Jane  woker  29.5   70.0         None
+2   Mark   boss  33.0    NaN         None
+3   Evan   boss  35.0  130.0         None
+4   Luvy  woker  20.0    NaN         None
+5   Jack  woker   NaN   80.0         None
+
+df.dropna(subset=['age'])
+>>>
+   name    job   age    pay test_drop_na
+1  Jane  woker  29.5   70.0         None
+2  Mark   boss  33.0    NaN         None
+3  Evan   boss  35.0  130.0         None
+4  Luvy  woker  20.0    NaN         None
+
+df.dropna(subset=['age','pay'])
+>>>
+   name    job   age    pay test_drop_na
+1  Jane  woker  29.5   70.0         None
+3  Evan   boss  35.0  130.0         None
+```
