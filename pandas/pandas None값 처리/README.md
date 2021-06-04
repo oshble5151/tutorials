@@ -325,3 +325,26 @@ df.dropna() #axis=1
 4   Luvy  woker
 5   Jack  woker
 ```
+1) how 인수를 통해 None값이 하나라도 있을 경우, 혹은 모든값이 None값일 경우를 선택해서 제거 가능하다.
+```python
+print(df)
+>>>
+    name    job   age    pay test_drop_na
+0  Tomas   boss   NaN  100.0         None
+1   Jane  woker  29.5   70.0         None
+2   Mark   boss  33.0    NaN         None
+3   Evan   boss  35.0  130.0         None
+4   Luvy  woker  20.0    NaN         None
+5   Jack  woker   NaN   80.0         None
+
+df.dropna(axis=1,how='all')
+>>>
+    name    job   age    pay
+0  Tomas   boss   NaN  100.0
+1   Jane  woker  29.5   70.0
+2   Mark   boss  33.0    NaN
+3   Evan   boss  35.0  130.0
+4   Luvy  woker  20.0    NaN
+5   Jack  woker   NaN   80.0
+```
+how='all'로 인해 모든 값이 None일 경우의 열만 제거 되었다.
