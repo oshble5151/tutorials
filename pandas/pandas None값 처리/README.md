@@ -205,7 +205,9 @@ print(df)
 df[0].sum()
 >>>
 16
-
+```
+계산 시 None값을 인지하려면 skipna=0를 사용하면 된다.
+```python
 df[0].sum(skipna=0)
 >>>
 TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
