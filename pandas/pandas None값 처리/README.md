@@ -262,7 +262,7 @@ print(df)
 
 where method를 사용하여 동일한 작업을 수행할 수 있다.
 ```python
-df.where(pd.notna(dff), dff.mean(), axis=1)
+df.where(pd.notna(df), df.mean(), axis=1)
 >>>
     name    job   age
 0  Tomas   boss  30.0
