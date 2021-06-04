@@ -278,9 +278,27 @@ df.where(pd.notna(dff), dff.mean(), axis=1)
 print(df)
 >>>
     name    job   age    pay
-0  Tomas   boss  30.0  100.0
-1   Jane  woker   NaN   70.0
+0  Tomas   boss   NaN  100.0
+1   Jane  woker  29.5   70.0
 2   Mark   boss  33.0    NaN
 3   Evan   boss  35.0  130.0
 4   Luvy  woker  20.0    NaN
 5   Jack  woker   NaN   80.0
+```
+나이와 봉급의 누락데이터를, 각 직급의 평균값으로 채워 주려고 한다.
+
+예를들어 Tomas의 나이는 상사(boss)들의 나이의 평균으로 넣어주고, Luvy의 봉급은 부하(woker)들의 월급의 평균을 넣어주려고 한다.
+
+이는 다음과 같이 가능하다.
+```python
+df2.fillna(df2.groupby('job').transform('mean'))
+print(df2)
+>>>
+    name    job    age    pay
+0  Tomas   boss  34.00  100.0
+1   Jane  woker  29.50   70.0
+2   Mark   boss  33.00  115.0
+3   Evan   boss  35.00  130.0
+4   Luvy  woker  20.00   75.0
+5   Jack  woker  24.75   80.0
+```
