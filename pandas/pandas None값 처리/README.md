@@ -67,6 +67,62 @@ df['age'] == np.nan
 Name: age, dtype: bool
 ```
 
+## __datetime NaT__
+
+datetime값은 None값 처리 할 경우 결측값은 NaT로 처리된다.
+```python
+df = pd.Series([pd.Timestamp("20120101"),pd.Timestamp("20120101"),pd.Timestamp("20120101")],index=[0,2,4])
+>>>
+0   2012-01-01
+2   2012-01-01
+4   2012-01-01
+dtype: datetime64[ns]
+df.reindex([0,1,2,3,4])
+>>>
+0   2012-01-01
+1          NaT
+2   2012-01-01
+3          NaT
+4   2012-01-01
+dtype: datetime64[ns]
+```
+
+## Nan값 산술계산
+
+__산술계산 규칙__
+
+.sum()으로 데이터를 합칠 때, None값은 0으로 처리되어 계산 된다.
+
+.prod()로 데이터를 자승해줄때는 None값은 1로 처리되어 계산된다.
+```python
+print(df)
+>>>
+      0     1     2
+0     6  None    10
+1     5     1     2
+2     4     4  None
+3     1     1     1
+4  None    10     5
+
+df[0].sum()
+>>>
+16
+```
+계산 시 None값을 인지하려면 skipna=0를 사용하면 된다.
+```python
+df[0].sum(skipna=0)
+>>>
+TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+```
+
+None값이 계산에 포함되어, int와 NoneType은 계산될 수 없다는 메시지가 뜬다.
+
+## NA값과 groupby
+
+__Nan값은 groupby에서 제외된다.__
+
+
+## None값 filling
 ```python
 df['age'].fillna('-',inplace=bool(1))
 print(df)
@@ -169,60 +225,3 @@ df.fillna('_',limit =1 )
 5   Jack  woker  NaN
 ```
 첫 번째 None값만 바뀐 것을 확인할 수 있다.
-
-## __datetime NaT__
-
-datetime값은 None값 처리 할 경우 결측값은 NaT로 처리된다.
-```python
-df = pd.Series([pd.Timestamp("20120101"),pd.Timestamp("20120101"),pd.Timestamp("20120101")],index=[0,2,4])
->>>
-0   2012-01-01
-2   2012-01-01
-4   2012-01-01
-dtype: datetime64[ns]
-df.reindex([0,1,2,3,4])
->>>
-0   2012-01-01
-1          NaT
-2   2012-01-01
-3          NaT
-4   2012-01-01
-dtype: datetime64[ns]
-```
-
-## Nan값 산술계산
-
-__산술계산 규칙__
-
-.sum()으로 데이터를 합칠 때, None값은 0으로 처리되어 계산 된다.
-
-.prod()로 데이터를 자승해줄때는 None값은 1로 처리되어 계산된다.
-```python
-print(df)
->>>
-      0     1     2
-0     6  None    10
-1     5     1     2
-2     4     4  None
-3     1     1     1
-4  None    10     5
-
-df[0].sum()
->>>
-16
-```
-계산 시 None값을 인지하려면 skipna=0를 사용하면 된다.
-```python
-df[0].sum(skipna=0)
->>>
-TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
-```
-
-None값이 계산에 포함되어, int와 NoneType은 계산될 수 없다는 메시지가 뜬다.
-
-## NA값과 groupby
-
-__Nan값은 groupby에서 제외된다.__
-
-
-##
