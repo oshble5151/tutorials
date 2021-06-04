@@ -272,3 +272,15 @@ df.where(pd.notna(dff), dff.mean(), axis=1)
 4   Luvy  woker  20.0
 5   Jack  woker  29.5
 ```
+
+다음과 같이 pay가 추가된 DataFrame이 있을때
+```python
+print(df)
+>>>
+    name    job   age    pay
+0  Tomas   boss  30.0  100.0
+1   Jane  woker   NaN   70.0
+2   Mark   boss  33.0    NaN
+3   Evan   boss  35.0  130.0
+4   Luvy  woker  20.0    NaN
+5   Jack  woker   NaN   80.0
