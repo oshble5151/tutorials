@@ -191,7 +191,12 @@ dtype: datetime64[ns]
 ```
 
 ## Nan값 산술계산
-.sum()으로 데이터를 합칠 때, None값은 0으로 처리 되어 계산 된다.
+
+__산술계산 규칙__
+
+.sum()으로 데이터를 합칠 때, None값은 0으로 처리되어 계산 된다.
+
+.prod()로 데이터를 자승해줄때는 None값은 1로 처리되어 계산된다.
 ```python
 print(df)
 >>>
@@ -214,3 +219,10 @@ TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 ```
 
 None값이 계산에 포함되어, int와 NoneType은 계산될 수 없다는 메시지가 뜬다.
+
+## NA값과 groupby
+
+__Nan값은 groupby에서 제외된다.__
+
+
+##
