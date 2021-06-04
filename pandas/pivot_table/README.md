@@ -140,7 +140,7 @@ date                                    ...
 2021-06-05 -2.368476e-15           NaN  ...        NaN        NaN
 ```
 평균이 아닌 다른 값으로 중복되는 index를 계산하고 싶을 경우 aggfunc에 다른 함수를 사용하여 주면 된다.
-(default 갑은 np.mean이다.)
+(default np.mean이다.)
 
 
 
