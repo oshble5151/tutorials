@@ -127,3 +127,16 @@ ValueError: Index contains duplicate entries, cannot reshape
 ```
 이와 같은 경우 pivot 을 사용할 경우, date index, 즉 각 날짜에 시험을 친 사람이 같으므로 중복되어서 진행할 수 없다는 error가 발생한다.
 
+이 경우 pivot_table을 사용하면 중복되는 값을 평균시켜 하나의 값으로 출력해준다.
+
+```python
+df.pivot_table(index = 'date',columns='name')
+>>>
+               deviation                ...     scores           
+name                 Ann          Mary  ...       Mary        Tom
+date                                    ...                      
+2021-06-03           NaN           NaN  ...        NaN  63.666667
+2021-06-04           NaN -4.736952e-15  ...  70.666667        NaN
+2021-06-05 -2.368476e-15           NaN  ...        NaN        NaN
+```
+각 학생이 시험을 치지않은 날에는 None값이 들어간다.
