@@ -211,4 +211,4 @@ df[0].sum(skipna=0)
 TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 ```
 
-None값이 계산에 포함되어, int와 NoneType은 계산될수 없다는 메시지가 뜬다.
+None값이 계산에 포함되어, int와 NoneType은 계산될 수 없다는 메시지가 뜬다.
