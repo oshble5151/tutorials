@@ -303,3 +303,25 @@ print(df2)
 4   Luvy  woker  20.00   75.0
 5   Jack  woker  24.75   80.0
 ```
+
+# dropna
+dropna를 통해 결측값이 포함된 label을 제거할 수 있다.
+
+axis의 default는 0이다.
+```python
+df.dropna() #axis=0
+>>>
+   name    job   age    pay
+1  Jane  woker  29.5   70.0
+3  Evan   boss  35.0  130.0
+
+df.dropna() #axis=1
+>>>
+    name    job
+0  Tomas   boss
+1   Jane  woker
+2   Mark   boss
+3   Evan   boss
+4   Luvy  woker
+5   Jack  woker
+```
