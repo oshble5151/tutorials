@@ -53,6 +53,9 @@ df.notna()
 ```
 이와 같이 data에 None값이 포함 된 경우, columns명으로 Seriese에 접근한뒤, fillna Method를 활용하여 None값을 지정 값으로 수정 할 수 있다.
 
+
+
+
 ## np.nan != None
 np.nan != np.nan임에 주의하여 data를 처리해야한다.
 ```python
