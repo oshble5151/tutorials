@@ -88,4 +88,4 @@ date
 2021-06-04     99   79  34  28.333333   8.333333 -36.666667
 2021-06-05     60   38  68   4.666667 -17.333333  12.666667
 ```
-pivot 함수에서 values 인수가 누락될 경우, 모든 values가 pivot table에 나타난다.
+pivot 함수에서 index와 columns를 지정하고, values 인수가 누락될 경우, 모든 values가 pivot table에 나타난다.
