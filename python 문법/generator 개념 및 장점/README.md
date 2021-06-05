@@ -16,7 +16,7 @@ range
 ```python
 def generator(n):
 	for i in range(n):
-      yield i
+     		 yield i
 
 generator(100000)
 >>>
