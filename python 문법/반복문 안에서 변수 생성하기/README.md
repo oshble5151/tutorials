@@ -18,6 +18,16 @@ print(a,b,c,d,e)
 >>> 
 1 2 3 4 5
 ```
+globals().keys()로 변수가 전역범위에 잘 저장되었는지 확인할수 있다.
+
+```python
+globals().keys()
+>>>
+dict_keys(['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__annotations__', '__builtins__', 'var_name', 'values', 'i', 'j', 'a', 'b', 'c', 'd', 'e'])
+```
+
+
+
 
 __2) exec 활용__
 
