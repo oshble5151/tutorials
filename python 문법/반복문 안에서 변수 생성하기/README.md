@@ -44,9 +44,7 @@ print(a,b,c,d,e)
 
 변수의 개수가 적을때는 굳이 반복문안에서 선언 할 필요가 없다.
 
-하지만 load 해야할 자료의 개수가 상당히 많을 경우, 변수의 name과 load할 file_name을 지정해놓고, for문을 활용하여 지정해주는 편이 
-
-더 간편하다. 
+하지만 load 해야할 자료의 개수가 상당히 많을 경우, 변수의 name과 load할 file_name을 지정해놓고, for문을 활용하여 지정해주는 편이 더 간편하다. 
 
 netCDF4나 iris를 활용해 많은 개수의 file을 load해야할 경우 다음과 같이 간단하게 for 문을 활용해 load할 수 있다.
 ```python
