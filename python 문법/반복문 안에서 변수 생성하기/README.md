@@ -31,7 +31,7 @@ dict_keys(['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__an
 
 __2) exec 활용__
 
-__exec은 문자열 그래도 선언해주는 함수이다.__
+__exec은 문자열을 그대 선언해주는 함수이다.__
 
 ```python
 for i ,j in zip(var_name,values):
