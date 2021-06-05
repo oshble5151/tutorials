@@ -3,7 +3,7 @@
 리스트 comprehension을 사용하면, 1에서 100000개의 숫자를 전부 담긴 list를 생성할수 있다.
 
 생성된 10만개의 숫자는 메모리에 전부 할당이 된다.
-```
+```python
 li = [i for i in range(100000)]
 len(li)
 >>> 
