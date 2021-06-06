@@ -32,7 +32,10 @@ label = [str(x)+"<"+"x"+"<" +str(x+20) for x in bins[0:-1]]
 print(label)
 >>>
 ['0<x<20', '20<x<40', '40<x<60', '60<x<80', '80<x<100']
+```
 
+생성한 범주를 활용하여 다음과 같이 자료를 범주로 구분하여 나눌 수 있다.
+```python
 df['cartegory']=pd.cut(df[0],bins,right=0,labels=label)
 
 print(df)
