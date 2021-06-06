@@ -23,7 +23,15 @@ print(df)
 ```python
 
 bins =list(range(0,120,20))
+print(bins)
+>>>
+[0, 20, 40, 60, 80, 100]
+
 label = [str(x)+"<"+"x"+"<" +str(x+20) for x in bins[0:-1]]
+
+print(label)
+>>>
+['0<x<20', '20<x<40', '40<x<60', '60<x<80', '80<x<100']
 
 df['cartegory']=pd.cut(df[0],bins,right=0,labels=label)
 
