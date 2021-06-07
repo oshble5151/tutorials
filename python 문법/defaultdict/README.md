@@ -31,7 +31,7 @@ default_dict['a'] +=10
 print(default_dict['a'])
 >>> 10
 ```
-__2)default가 list or set 인경우 __
+__2)default가 list or set 인 경우__  
 
 list나 set이 default값인 경우, 각각 append 와 add를 활용하여 없는 키에 바로 컨테이너에 값을 추가해 줄 수 있다.
 
