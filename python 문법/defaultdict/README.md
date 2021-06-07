@@ -30,4 +30,9 @@ default_dict = ct.defaultdict(int)
 default_dict['a'] +=10
 print(default_dict['a'])
 >>> 10
+```
+__2)default가 list or set 인경우 __
 
+list나 set이 default값인 경우, 각각 append 와 add를 활용하여 없는 키에 바로 컨테이너에 값을 추가해 줄 수 있다.
+
+set의 경우 list와 달리 중복값을 허용하지 않는 다는 것을 유의해야한다.
