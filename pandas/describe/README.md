@@ -38,3 +38,60 @@ top       3
 freq      3
 dtype: object
 ```
+
+__1)percentiles__
+
+percentiles 인수를 활용하여 분율의 범위를 정해줄수 있다. default값은 [.25, .5, .75]이다.
+```python
+ds.describe(percentiles = [.3,.6,.9])
+>>>
+count    9.000000
+mean     3.777778
+std      1.922094
+min      1.000000
+30%      3.000000
+50%      3.000000
+60%      3.800000
+90%      6.200000
+max      7.000000
+dtype: float64
+```
+__2)datetime_is_numericd__
+
+datetime_is_numericd는 datatime type을 숫자형 data로 간주할 지 문자형으로 간주할지 결정하는 인수이다.
+```python
+ds_date = pd.Series([
+       np.datetime64("2019-06-07"),
+       np.datetime64("2020-06-07"),
+    np.datetime64("2021-06-07")])
+>>>
+print(ds_date)
+0   2019-06-07
+1   2020-06-07
+2   2021-06-07
+dtype: datetime64[ns]
+
+s.describe() 
+>>>
+count                       3
+unique                      3
+top       2021-06-07 00:00:00
+freq                        1
+first     2019-06-07 00:00:00
+last      2021-06-07 00:00:00
+dtype: object
+```
+datetime 형식의 data를 문자열로 간주하고 decribe가 실행되었다.
+
+```python
+s.describe(datetime_is_numeric=True)
+>>>
+count                      3
+mean     2020-06-06 16:00:00
+min      2019-06-07 00:00:00
+25%      2019-12-07 00:00:00
+50%      2020-06-07 00:00:00
+75%      2020-12-06 12:00:00
+max      2021-06-07 00:00:00
+dtype: object
+```
