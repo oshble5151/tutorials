@@ -39,8 +39,8 @@ iris는 iris.pandas module을 제공하여 cube object과 DataFrame을 서로 �
 __1) cube, DataFrame 변환__
 
 ```python
-land_temp = iris.load_cube('land_month_1981.nc','t_ref')
-air_temp = iris.load_cube('atmos_month_1981.nc','tas')
+land_temp = iris.load_cube('land_month_1981.nc','t_ref')[6]
+air_temp = iris.load_cube('atmos_month_1981.nc','tas')[6]
 
 land_temp_dataframe = iris.pandas.as_data_frame(land_temp)
 air_temp_dataframe = iris.pandas.as_data_frame(air_temp)
@@ -69,5 +69,39 @@ print(air_temp_dataframe)
 ```
 위와 같이 iris.pandas.as_data_frame을 활용하면 cube를 간단하게 DataFrame으로 변환시켜준다.
 
-__2) fillna __
+__2) fillna__ 
 
+DataFrame의 
+
+```python
+land_fill_data = land_temp_dataframe.fillna(air_temp_dataframe)
+
+land_fill_cube = iris.pandas.as_cube(land_fill_data)
+
+print(land_fill_cube)
+
+unknown / (unknown)                 (index: 90; columns: 144)
+     Dimension coordinates:
+          index                           x            -
+          columns                         -            x
+``` 
+iris.pandas.as_cube로 변환해줄경우 축의 long_name이 index와 columns로 지정되어있다.
+
+iris.coord.long_name attribute를 새로 지정하여 축의 이름을 위경도 축으로 바꿔줘야함에 주의해야 한다.
+
+```python
+
+land_fill_cube.coord('index').long_name = 'latitude'
+land_fill_cube.coord('columns').long_name = 'longitude'
+
+print(land_fill_cube)
+unknown / (unknown)                 (latitude: 90; longitude: 144)
+     Dimension coordinates:
+          latitude                           x              -
+          longitude                          -              x
+```
+fillna method에 대기온도의 dataFrame을 넣어, land 온도dataframe의 None값을 대기온도 값으로 채워 주었다.
+
+![image](https://user-images.githubusercontent.com/73323188/121181293-ce81d280-c89c-11eb-9116-5da991a98ab4.png)
+
+plot해보면, 위와 같이 데이터가 채워진 것을 확인할 수 있다.
