@@ -44,12 +44,6 @@ for i,j in zip(*for_index_list):
    qplt.pcolormesh(i)
    plt.show()
  
-equalise_attributes(cube_list)
-
-month1_30year_file = cube_list.merge_cube()
-month1_30year_collap_time = month1_30year_file.collapsed('time',iris.analysis.MEAN)
-
-anomoly_month1_30year = month1_30year_file - month1_30year_collap_time
 ```
 ![image](https://user-images.githubusercontent.com/73323188/120260463-ea034100-c2d0-11eb-9ad4-9f5ebc433e18.png)
 
