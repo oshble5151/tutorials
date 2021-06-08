@@ -10,6 +10,12 @@
 
 내부적으로 데이터 구조는 범주 배열과 범주 배열의 실제 값을 가리키는 정수 배열로 구성된다.
 
-범주형 데이터 유형은 다음 경우에 유용하다.
-
+data와 data의 범주를 입력하여 pd.Categorical 객체를 만들 수 있다.  
 ```python
+category = pd.Categorical(["a","b","c","d","e"],categories=["a","c"])
+print(category)
+>>>
+['a', NaN, 'c', NaN, NaN]
+Categories (2, object): ['a', 'c']
+```
+data배열로 a,b,c,d,e가 들어갔고, 이 중에서 지정한 범주인 'a'와 'c'만 값으로 남고 나머지는 None값으로 처리되었다.
