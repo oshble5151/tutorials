@@ -25,6 +25,7 @@ else: print(False)
 True
 
 입력: apple
+False
 
 ```
 while len(str_list)>1 대신에 while str_list !=[] 로 코딩했더니 오류가 발생하였다.
