@@ -20,6 +20,39 @@ Categories (2, object): ['a', 'c']
 ```
 data배열로 a,b,c,d,e가 들어갔고, 이 중에서 지정한 범주인 'a'와 'c'만 값으로 남고 나머지는 None값으로 처리되었다.
 
+# pd.CategoricalDtype
+
+CategoricalDtype로 범주만 생성할 수 있다.
+```python
+pd.CategoricalDtype(['a','c'])
+>>>
+CategoricalDtype(categories=['a', 'c'], ordered=False)
+```
+생성된 범주는 astype을 이용하여 data에 적용시켜줄 수 있다.
+
+```python
+df = pd.Series(list('abcde'))
+df
+>>>
+0    a
+1    b
+2    c
+3    d
+4    e
+dtype: object
+
+df.astype(car)
+>>>
+0      a
+1    NaN
+2      c
+3    NaN
+4    NaN
+dtype: category
+```
+마찬가지로 지정한 범주인 'a'와 'c'만 값으로 남고 None값으로 처리되었다.
+
+
 # Categorical 적용하기
 
 다음과 같이 type이 A,B,C 3개로 구분되는 제품의 DataFrame이 있을때, cartegory를 활용하여 제품의 타입을 나타내는 열을 추가할 수 있다.
@@ -87,3 +120,4 @@ print(df)
 7  product1_Btype  Btype
 8  product3_Atype  Atype
 ```
+
