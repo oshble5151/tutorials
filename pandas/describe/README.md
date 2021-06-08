@@ -95,3 +95,47 @@ min      2019-06-07 00:00:00
 max      2021-06-07 00:00:00
 dtype: object
 ```
+
+## DataFrame 일때
+
+dataframe일때 describe는 다음과 같이 출력된다.
+```python
+df = pd.DataFrame({'blood_type':'A B O AB O B'.split(' '),'weight':[66,75,53,72,55,68]},index = 'Tom Matthew Ann Jack chris Michael'.split(' '))
+print(df)
+>>>
+        blood_type  weight
+Tom              A      66
+Matthew          B      75
+Ann              O      53
+Jack            AB      72
+chris            O      55
+Michael          B      68
+
+print(df.describe())
+>>>
+          weight
+count   6.000000
+mean   64.833333
+std     8.975894
+min    53.000000
+25%    57.750000
+50%    67.000000
+75%    71.000000
+max    75.000000
+
+print(df.describe(include='all'))
+>>>
+
+       blood_type     weight
+count           6   6.000000
+unique          4        NaN
+top             O        NaN
+freq            2        NaN
+mean          NaN  64.833333
+std           NaN   8.975894
+min           NaN  53.000000
+25%           NaN  57.750000
+50%           NaN  67.000000
+75%           NaN  71.000000
+max           NaN  75.000000
+
