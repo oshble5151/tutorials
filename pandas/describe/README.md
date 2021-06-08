@@ -126,7 +126,7 @@ max    75.000000
 dataframe에 describe를 사용할 경우 기본적으로 numeric, 즉 숫자형 데이터로 구성된 열에 대해서만 통계량을 보여준다.
 
 문자열 data로 구성된 열의 요약을 보고 싶을때는, 다음과 같이 include 변수를 활용할 수 있다.
-
+```python
 print(df.describe(include='all'))
 >>>
 
