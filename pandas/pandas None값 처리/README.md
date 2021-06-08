@@ -302,7 +302,7 @@ print(df2)
 3   Evan   boss  35.00  130.0
 4   Luvy  woker  20.00   75.0
 5   Jack  woker  24.75   80.0
-```
+``` 
 
 # dropna
 dropna를 통해 결측값이 포함된 label을 제거할 수 있다.
