@@ -19,3 +19,5 @@ print(category)
 Categories (2, object): ['a', 'c']
 ```
 data배열로 a,b,c,d,e가 들어갔고, 이 중에서 지정한 범주인 'a'와 'c'만 값으로 남고 나머지는 None값으로 처리되었다.
+
+```
