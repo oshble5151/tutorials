@@ -1,4 +1,4 @@
-# 펠린드롬(회문)
+# 1) 펠린드롬(회문) -> list를 활용한 풀이
 펠린드롬: 뒤집었을 때 같은 말이 되는것. 
 
 ```python
@@ -28,6 +28,11 @@ True
 False
 
 ```
+# 2) 펠린드롬 -> deque를 활용한 풀이
+```python
+
+
+
 while len(str_list)>1 대신에 while str_list !=[] 로 코딩했더니 오류가 발생하였다.
 
 if str_list.pop(0) != str_list.pop() => 해당 조건문이 실행되기 위해서는 최소 2개의 요소가 필요하다.
