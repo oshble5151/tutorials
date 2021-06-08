@@ -121,3 +121,30 @@ print(df)
 8  product3_Atype  Atype
 ```
 
+# pd.Categorical.from_codes
+
+범주는 pd.Categorical.from_codes를 통해서도 생성가능하다.
+
+pd.Categorical.from_codes는 정수배열을 통해 범주를 생성한다.
+
+```python
+df
+>>>
+          product
+0  product1_Ctype
+1  product3_Ctype
+2  product2_Atype
+3  product3_Btype
+4  product2_Ctype
+5  product2_Btype
+6  product1_Atype
+7  product1_Btype
+8  product3_Atype
+
+pd.Categorical.from_codes([2,2,0,1,2,1,0,1,0],categories=["Atype","Btype","Ctype"])
+>>>
+['Ctype', 'Ctype', 'Atype', 'Btype', 'Ctype', 'Btype', 'Atype', 'Btype', 'Atype']
+```
+0,1,2를 각각 "Atype","Btype","Ctype"으로 인지해 입력한 정수배열과 동일한 순서의 범주를 생성해준다.
+
+
