@@ -20,4 +20,36 @@ Categories (2, object): ['a', 'c']
 ```
 data배열로 a,b,c,d,e가 들어갔고, 이 중에서 지정한 범주인 'a'와 'c'만 값으로 남고 나머지는 None값으로 처리되었다.
 
+# Categorical 적용하기
+
+다음과 같이 type이 A,B,C 3개로 구분되는 제품의 DataFrame이 있을때, cartegory를 활용하여 제품의 타입을 나타내는 열을 추가할 수 있다.
+```python
+print(df)
+>>>
+          product
+0  product1_Ctype
+1  product3_Ctype
+2  product2_Atype
+3  product3_Btype
+4  product2_Ctype
+5  product2_Btype
+6  product1_Atype
+7  product1_Btype
+8  product3_Atype
+
+category = pd.Categorical([x.split('_')[1] for x in df.iloc[:,0]],categories=['Btype', 'Atype', 'Ctype']
+df['type'] = category 
+
+print(df)
+>>>
+          product   type
+0  product1_Ctype  Ctype
+1  product3_Ctype  Ctype
+2  product2_Atype  Atype
+3  product3_Btype  Btype
+4  product2_Ctype  Ctype
+5  product2_Btype  Btype
+6  product1_Atype  Atype
+7  product1_Btype  Btype
+8  product3_Atype  Atype
 ```
