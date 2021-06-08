@@ -6,7 +6,7 @@ string = input('입력: ')
 
 str_list=[]
 
-for i in string:
+for i in string:  # 문자열 전처리=> 알파벳과 숫자가 아닌 것은 포함시키지 않음
   if i.isalnum():
     str_list.append(i.upper())
 
