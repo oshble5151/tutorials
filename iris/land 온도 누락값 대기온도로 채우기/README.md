@@ -102,6 +102,6 @@ unknown / (unknown)                 (latitude: 90; longitude: 144)
 ```
 fillna method에 대기온도의 dataFrame을 넣어, land 온도dataframe의 None값을 대기온도 값으로 채워 주었다.
 
-![image](https://user-images.githubusercontent.com/73323188/121181293-ce81d280-c89c-11eb-9116-5da991a98ab4.png)
+![image](https://user-images.githubusercontent.com/73323188/121183061-a1ceba80-c89e-11eb-9999-6ca4bd629442.png)
 
 plot해보면, 위와 같이 데이터가 채워진 것을 확인할 수 있다.
