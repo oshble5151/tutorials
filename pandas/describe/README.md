@@ -148,3 +148,16 @@ df.describe(include=np.number) # print only numeric columns
 
 ```
 
+describe를 통해 category형 자료의 요약만 볼 수 있다.
+```python
+df.describe(include='category')
+df['weight'] = df['weight'].astype('category')
+
+df.describe(include='category')
+>>>
+        weight  
+count        6
+unique       6
+top         53
+freq         1
+```
