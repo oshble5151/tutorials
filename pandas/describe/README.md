@@ -142,4 +142,9 @@ min           NaN  53.000000
 50%           NaN  67.000000
 75%           NaN  71.000000
 max           NaN  75.000000
+
+df.describe(include='object') # print only string columns
+df.describe(include=np.number) # print only numeric columns
+
 ```
+
