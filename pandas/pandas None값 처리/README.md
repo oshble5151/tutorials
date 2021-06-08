@@ -229,9 +229,9 @@ df.fillna('_',limit =1 )
 ```
 첫 번째 None값만 바뀐 것을 확인할 수 있다.
 
-## 누락값 dict or Series로 채우기
+## 누락값 dict, Series, DataFrame으로 채우기
 
-fillna는 dict나 Series또한 인수로 받을 수 있다.
+fillna는 dict나 Series, DataFrame을 인수로 받을 수 있다.
 
 이때 인수가 되는 Series의 index는 값이 채워질 대상이 되는 DataFrame의 열과 일치해야 한다.
 
