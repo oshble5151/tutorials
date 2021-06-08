@@ -128,7 +128,7 @@ print(df)
 pd.Categorical.from_codes는 정수배열을 통해 범주를 생성한다.
 
 ```python
-df
+print(df)
 >>>
           product
 0  product1_Ctype
