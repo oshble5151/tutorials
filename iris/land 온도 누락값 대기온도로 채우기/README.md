@@ -39,8 +39,8 @@ iris는 iris.pandas module을 제공하여 cube object과 DataFrame을 서로 �
 __1) cube, DataFrame 변환__
 
 ```python
-land_temp = iris.load_cube('land_month_1981.nc','t_ref')[6]
-air_temp = iris.load_cube('atmos_month_1981.nc','tas')[6]
+land_temp = iris.load_cube('land_month_1981.nc','t_ref')[6] # select july
+air_temp = iris.load_cube('atmos_month_1981.nc','tas')[6] # select july
 
 land_temp_dataframe = iris.pandas.as_data_frame(land_temp)
 air_temp_dataframe = iris.pandas.as_data_frame(air_temp)
