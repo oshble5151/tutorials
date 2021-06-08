@@ -53,3 +53,37 @@ print(df)
 7  product1_Btype  Btype
 8  product3_Atype  Atype
 ```
+
+사실 위과정은 apply를 통해서도 간단하게 가능하다.
+```python
+print(df)
+>>>
+          product
+0  product1_Ctype
+1  product3_Ctype
+2  product2_Atype
+3  product3_Btype
+4  product2_Ctype
+5  product2_Btype
+6  product1_Atype
+7  product1_Btype
+8  product3_Atype
+
+def check_type(*col):
+	return [  x.split('_')[1] for x in col[0]]
+
+df['test'] = df.apply(check_type)
+
+print(df)
+>>>
+          product   test
+0  product1_Ctype  Ctype
+1  product3_Ctype  Ctype
+2  product2_Atype  Atype
+3  product3_Btype  Btype
+4  product2_Ctype  Ctype
+5  product2_Btype  Btype
+6  product1_Atype  Atype
+7  product1_Btype  Btype
+8  product3_Atype  Atype
+```
