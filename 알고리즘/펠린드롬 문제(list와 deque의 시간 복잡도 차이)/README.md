@@ -63,3 +63,4 @@ while len(str_list)>1 대신에 while str_list !=[] 로 코딩했더니 오류�
 if str_list.pop(0) != str_list.pop() => 해당 조건문이 실행되기 위해서는 최소 2개의 요소가 필요하다.
 
 따라서 len(str_list)>1 조건을 사용하여 str_list의 요소가 1개 일때는 while문이 돌지 않도록 코드를 짜야한다. 
+
