@@ -41,4 +41,6 @@ retnioP owT
 ```python
 t = ['t','e','s','t','_','j','o','i','n']
 "".join(t)
+>>> 'test_join'
+
 ```
