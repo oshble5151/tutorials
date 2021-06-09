@@ -51,6 +51,11 @@ if check_pelin==0:
 else: print(False)
 ```
 
+# 3) 두 코드의 소요시간차이
+![image](https://user-images.githubusercontent.com/73323188/121277991-b9dd2300-c90c-11eb-88e1-b25b9296a35a.png)
+
+deque를 이용한 코드의 소요시간이 훨씬 더 짧음을 알 수 있다.
+
 
 while len(str_list)>1 대신에 while str_list !=[] 로 코딩했더니 오류가 발생하였다.
 
