@@ -41,9 +41,9 @@ pd.array([1,2,None])
 Length: 3, dtype: Int64
 
 pd.Series(pd.array([1,2,None]))
-0    1.0
-1    2.0
-2    NaN
-dtype: float64
+0       1
+1       2
+2    <NA>
+dtype: Int64
 ```
 
