@@ -35,3 +35,10 @@ print("".join(string))
 입력: Two Pointer
 retnioP owT
 ```
+# 주요함수
+
+1) "".join(list object) => 리스트를 요소를 합쳐서 문자열로 변환해줌
+```python
+t = ['t','e','s','t','_','j','o','i','n']
+"".join(t)
+```
