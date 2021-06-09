@@ -56,6 +56,11 @@ else: print(False)
 
 deque를 이용한 코드의 소요시간이 훨씬 더 짧음을 알 수 있다.
 
+# 주요함수
+
+1) isalnum() : 문자열이 알파벳 혹은 숫자로만 구성 되어있는지 판별해줌
+2) popleft() : list의 pop(0)과 동일하나, O(1)이기 때문에 시간복잡도가 훨씬 더 작다.
+
 
 # * 코딩오류
 while len(str_list)>1 대신에 while str_list !=[] 로 코딩했더니 오류가 발생하였다.
