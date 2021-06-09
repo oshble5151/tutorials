@@ -13,7 +13,9 @@
 
 사실 list의 reverse method를 활용하면 간단하게 문자열을 뒤집을 수 있다.
 
-여기서는 투 포인터 알고리즘을 활용해 list의 reverse method를 구현해보고자 한다.
+여기서는 다음과 같이 시작과 끝점에서 투 포인터를 조작해가며 list의 reverse method를 구현해보고자 한다.
+
+![image](https://user-images.githubusercontent.com/73323188/121284650-2e698f00-c918-11eb-8268-3047a5f521eb.png)
 
 ```python
 string = list(input("입력: "))
