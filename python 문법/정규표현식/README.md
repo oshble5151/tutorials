@@ -23,3 +23,34 @@ re.search('^regular','regular expression')
 re.search('regular$','regular expression')
 >>>
 <re.Match object; span=(8, 18), match='expression'>
+```
+
+## 3) or 연산자 => 문자열이 맨 앞에 오는지 여부 판단
+```python
+re.match('regular|test','regular expression')
+>>>
+<re.Match object; span=(0, 7), match='regular'>
+
+re.match('regular|test','test expression')
+>>>
+<re.Match object; span=(0, 4), match='test'>
+```
+
+
+# 4) 하나라도 존재하는지 판단하기
+[0-9]* : * 숫자가 0개 이상 있는지 판단
+[0-9]+ : + 숫자가 1개 이상 있는지 판단
+
+```python
+re.match('[0-9]*','abc')
+>>>
+<re.Match object; span=(0, 0), match=''>
+
+re.match('[0-9]+','abc')
+>>> # 매치되지 않음
+```
+
+
+
+
+
