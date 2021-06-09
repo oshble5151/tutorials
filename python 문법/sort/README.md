@@ -11,3 +11,16 @@ li = ['a', 'e', 'd', 'g', 'f', 'b', 'c']
 il.sort()
 print(li)
 >>> ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+```
+
+# key 인수
+
+```python
+li = ['1_B', '3_A', '1_C', '2_A', '3_C', '3_B', '1_A', '2_C', '2_B']
+
+__1) key 1개, 알파벳을 기준으로 sort
+```python
+li.sort(key= lambda x : (x.split('_')[1]))
+print(li)
+>>> ['3_A', '2_A', '1_A', '1_B', '3_B', '2_B', '1_C', '3_C', '2_C']
+```
