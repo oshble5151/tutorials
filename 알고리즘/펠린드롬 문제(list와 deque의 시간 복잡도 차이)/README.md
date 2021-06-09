@@ -12,8 +12,8 @@ for i in string:  # 문자열 전처리=> 알파벳과 숫자가 아닌 것은 �
 
 check_pelin=0
 
-while len(str_list)>1:      
-  if str_list.pop(0) != str_list.pop():
+while len(str_list)>1: 
+  if str_list.pop(0) != str_list.pop(): # pop으로 맨앞과 맨뒤의 요소를 꺼내 비교함
     check_pelin+=1
 
 if check_pelin==0:
