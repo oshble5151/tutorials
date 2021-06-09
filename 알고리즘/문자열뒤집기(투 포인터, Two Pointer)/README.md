@@ -9,3 +9,27 @@
 
 ![image](https://user-images.githubusercontent.com/73323188/121281019-332b4480-c912-11eb-9199-9ffa6aa7e8d9.png)
 
+# 투 포인터를 활용하여  문자열 뒤집기
+
+사실 list의 reverse method를 활용하면 간단하게 문자열을 뒤집을 수 있다.
+
+여기서는 투 포인터 알고리즘을 활용해 list의 reverse method를 구현해보고자 한다.
+
+```python
+string = list(input("입력: "))
+
+pointer1, pointer2 = 0,len(string)-1
+
+while pointer1 < pointer2:
+       string[pointer1] ,string[pointer2] = string[pointer2] ,string[pointer1]
+
+       pointer1 +=1
+       pointer2 -=1
+
+print("".join(string))
+```
+
+```python
+입력: Two Pointer
+retnioP owT
+```
