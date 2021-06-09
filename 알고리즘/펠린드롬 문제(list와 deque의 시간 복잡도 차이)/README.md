@@ -30,7 +30,26 @@ False
 ```
 # 2) 펠린드롬 -> deque를 활용한 풀이
 ```python
+import collections as ct
+string = input('입력: ')
+str_deque = ct.deque()
 
+
+for i in string:
+  if i.isalnum():
+    str_deque.append(i.upper())
+
+check_pelin=0
+
+while len(str_deque)>1:
+  print(str_deque)
+  if str_deque.popleft() != str_deque.pop():
+    check_pelin+=1
+
+if check_pelin==0:
+       print(True)
+else: print(False)
+```
 
 
 while len(str_list)>1 대신에 while str_list !=[] 로 코딩했더니 오류가 발생하였다.
