@@ -46,5 +46,6 @@ df.plot.hist()
 만약 각 열의 Histogram을 한 figure가 아닌 subplot으로 보고 싶은 경우, DataFrame의 hist() method로 가능하다.
 ```python
 df.hist()
-![image](https://user-images.githubusercontent.com/73323188/121535670-53a3ed80-ca3d-11eb-8ac0-cb77eacd002f.png)
 ```
+![image](https://user-images.githubusercontent.com/73323188/121535670-53a3ed80-ca3d-11eb-8ac0-cb77eacd002f.png)
+
