@@ -3,6 +3,7 @@
 pandas를 통해 다양한 plot을 그릴수 있다. 몇가지 편의성에 대해 알아보고자 한다.
 
 __1)datetime x축 변환__
+
 pandas의 plot method로 plot 할 경우, index가 datetime일때 x축을 datetime에 맞게 변환하여 출력해준다.
 
 ```python
