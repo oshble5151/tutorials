@@ -31,10 +31,20 @@ df['a'].plot.hist()
 ![image](https://user-images.githubusercontent.com/73323188/121534421-2c005580-ca3c-11eb-92fb-dca71c8ced9f.png)
 ```
 
-# Series hist plot
+# DataFrame hist plot
 DataFrame을 hist로 plot하면, 모든 열의 histogram을 한 figure에 plot해준다.
 
 ```python
 df.plot.hist()
 ```
 ![image](https://user-images.githubusercontent.com/73323188/121534631-5ce08a80-ca3c-11eb-8d7a-30a4a5359dad.png)
+
+이때 alpha 인수로 투명도를 설정가능하다.
+
+# hist subplot 
+
+만약 각 열의 Histogram을 한 figure가 아닌 subplot으로 보고 싶은 경우, DataFrame의 hist() method로 가능하다.
+```python
+df.hist()
+![image](https://user-images.githubusercontent.com/73323188/121535670-53a3ed80-ca3d-11eb-8ac0-cb77eacd002f.png)
+```
