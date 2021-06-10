@@ -57,5 +57,6 @@ df.hist()
 arr = np.random.randint(0, 4, 1000) # 0~3 사이의 숫자가 들어있는 100개의 Random 배열 생성
 df['a'].hist(by=arr) # 입력된 arr가 각 요소에 group을 지정해줌.
 plt.show()
-![image](https://user-images.githubusercontent.com/73323188/121537870-47209480-ca3f-11eb-867d-1aa6261baca7.png)
 ```
+![image](https://user-images.githubusercontent.com/73323188/121537870-47209480-ca3f-11eb-867d-1aa6261baca7.png)
+
