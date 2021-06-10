@@ -44,3 +44,4 @@ df.plot.bar()
 plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/73323188/121527881-dcb72680-ca35-11eb-96c8-9f5b73917a11.png)
+ 
