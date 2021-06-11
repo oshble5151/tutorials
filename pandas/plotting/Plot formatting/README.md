@@ -75,3 +75,7 @@ df.plot()
 
 B 열만 second 축에 plot된것을 확인할 수 있다.
 
+만일 범례에 right를 표시하고 싶지 않을 경우 , mark_right옵션을 사용하면 된다.
+```python
+df.plot(secondary_y=["B"], mark_right=False) 
+```
