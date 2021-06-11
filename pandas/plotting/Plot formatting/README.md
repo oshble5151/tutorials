@@ -59,7 +59,7 @@ ds2.plot(secondary_y=True)
 ![image](https://user-images.githubusercontent.com/73323188/121621593-66eba300-caa7-11eb-8b4d-536611d05427.png)
 
 DataFrame을 plot할 경우, second 축에 그릴 열을 지정해줄 수 있다.
-```
+```python
 df
 >>>
    0    1
