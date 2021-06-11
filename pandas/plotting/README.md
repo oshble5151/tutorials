@@ -2,16 +2,23 @@
 
 pandas를 통해 다양한 plot을 그릴수 있다. 몇가지 편의성에 대해 알아보고자 한다.
 
-__1)datetime x축 변환__
+__1)시계열 x축 조정__
 
-pandas의 plot method로 plot 할 경우, index가 datetime일때 x축을 datetime에 맞게 변환하여 출력해준다.
+pandas의 plot method로 plot 할 경우, index가 datetime일때 x축을 시계열 데이터에 적합하도록 조정해준다.
 
 ```python
 ds = pd.Series(np.random.randn(500), index=pd.date_range("1/1/2000", periods=500))
 ds.plot()
 plt.show()
 ```
-![image](https://user-images.githubusercontent.com/73323188/121524935-c491d800-ca32-11eb-9e0d-c69681b8decd.png)
+![image](https://user-images.githubusercontent.com/73323188/121618379-9eefe780-caa1-11eb-8231-46b0d049f4e4.png)
+
+자동 시계열 축조정을 원하지 않는 경우 x_compat 인수를 활용하면 된다.
+```python
+ds.plot(x_compat=True)
+```
+![image](https://user-images.githubusercontent.com/73323188/121618423-b202b780-caa1-11eb-9a0f-9e1e61f1c8af.png)
+
 
 __2) coulmns->label__
 
