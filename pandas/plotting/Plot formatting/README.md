@@ -45,7 +45,7 @@ ds2
 Name: 1, dtype: int32
 ds1.plot()
 ds2.plot()
-
+```
 ![image](https://user-images.githubusercontent.com/73323188/121621338-f17fd280-caa6-11eb-9bf4-4638a53fc486.png)
 
 위와 같이 y축의 범위가 상당히 떨어진 2개의 data를 plot하면 값이 분포를 보기가 어려운 경우가 있다.
