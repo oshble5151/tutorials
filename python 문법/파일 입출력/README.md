@@ -55,7 +55,7 @@ os.path.getsize => 파일의 사이즈를 출력
 os.remove('test.py')
 os.remove('test.py')
 >>>
-FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다: '계좌번호 과제.py'
+FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다: 'test.py'
 ```
 
 
