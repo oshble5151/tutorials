@@ -24,3 +24,7 @@ plt.show()
 ![image](https://user-images.githubusercontent.com/73323188/121526073-040cf400-ca34-11eb-8cbd-12b744c19daa.png)
 
 
+__3) Plotting 결측값 처리__
+
+Pandas는 누락된 데이터를 포함하는 Data Frames 또는 Series를 플로팅할 때 결측값 그림 유형에 따라 삭제, 제외 또는 채워준다.
+
