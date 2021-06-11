@@ -57,6 +57,8 @@ os.remove('test.py')
 >>>
 FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다: 'test.py'
 ```
+위와 같이 같은 파일에 대해 2번 remove를 실행할 경우 2번째 코드에서 오류가 발생한다.
 
+try 문으로 exception을 
 
 
