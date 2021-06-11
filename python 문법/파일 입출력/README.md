@@ -48,4 +48,15 @@ os.remove => dir는 삭제되지 않는다.
 
 ## size check
 
-os.path.getsize
+os.path.getsize => 파일의 사이즈를 출력
+
+## control exception
+```python
+os.remove('test.py')
+os.remove('test.py')
+>>>
+FileNotFoundError: [WinError 2] 지정된 파일을 찾을 수 없습니다: '계좌번호 과제.py'
+```
+
+
+
