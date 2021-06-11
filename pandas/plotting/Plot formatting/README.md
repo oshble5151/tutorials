@@ -62,7 +62,7 @@ DataFrame을 plot할 경우, second 축에 그릴 열을 지정해줄 수 있다
 ```python
 df
 >>>
-   0    1
+   A    B
 0  1  500
 1  2  480
 2  3  300
