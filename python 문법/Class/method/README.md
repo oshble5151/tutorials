@@ -92,3 +92,79 @@ b.upSpeed(200)
 >>> 150
 ```
 
+# super method
+
+```python
+# using super calss attribute
+class super_class():
+       def __init__(self):
+              self.x = 1
+
+class sub_class(super_class):
+
+       def __init__(self):
+              self.y = 2
+
+test = sub_class()
+test.x # raise error
+
+
+class sub_class(super_class):
+
+       def __init__(self):
+              super().__init__()
+              self.y = 2
+test= sub_class()
+>>> test.x
+1
+>>> test.y
+2
+
+### 
+class super_class():
+       def __init__(self,x):
+              self.x = 10 + x 
+
+class sub_class(super_class):
+
+       def __init__(self):
+              super().__init__(1)
+              self.y = 2
+
+```
+
+# super.__init__() 사용하지 않아도 되는 경우 => __init__이 없을 경우
+```python              
+class super_class():
+       def __init__(self):
+              self.x = 1 
+
+class sub_class(super_class):
+
+       x= 10
+
+test = sub_class()
+
+sub_class.x
+>>> 10
+
+test.x
+>>> 1
+```
+
+
+
+
+
+# 오버라이딩 시 super의 메서드 사용 
+
+```python
+class super_class():
+       def me1(self):
+              print('me1') 
+
+class sub_class(super_class):
+       def me1(self):
+              super.me1()  # => output:'me1'
+              print('me2') # => output:'me2'
+```
