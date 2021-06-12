@@ -3,11 +3,11 @@
 후입선출 LIFO(Last In First Out)자료구조 이다.
 python은 따로 stack 자료형은 없고 list가 stack의 역할을 한다.
 
-```python
-
-
 # queue
+
 선입선출(FIFO) 방식으로 작동한다.
+
+```python
 
 # deque
 앞,뒤 양 방향에서 엘리먼트를 추가하거나 제거할 수 있다.
