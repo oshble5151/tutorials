@@ -169,3 +169,13 @@ class sub_class(super_class):
               super.me1()  # => output:'me1'
               print('me2') # => output:'me2'
 ```
+
+
+# 특수 메서드
+
+언더바와 언더바로 쌓여있는 method를 특수메서드라고 한다.
+
+
+__del__() : 객체를 지울때 실행됨
+
+__repr__() : print 할 때 
