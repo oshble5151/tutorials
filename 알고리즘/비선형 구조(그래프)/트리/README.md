@@ -20,3 +20,17 @@ Size(크기) : 자신을 포함한 모든 자식노드의 개수
 Height(높이) : 현재 위치에서 leaf까지의 거리
 
 Depth(깊이) : 루트에서 부터 현재노드 까지의 거리 
+
+# 트리와 그래프의 차이
+
+트리는 그래프에 포함되며, 트리는 __순환구조를 갖지 않는다.__
+
+# 트리가 아닌 경우
+
+1) 순환구조인 경우
+![image](https://user-images.githubusercontent.com/73323188/121768870-89f77f00-cb9b-11eb-8e63-bafb379f54cf.png)
+
+2) 노드의 부모가 2개 일때
+![image](https://user-images.githubusercontent.com/73323188/121768881-9c71b880-cb9b-11eb-8043-a12ffb01149e.png)
+
+3) 루트가 2
