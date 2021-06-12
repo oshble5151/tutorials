@@ -27,6 +27,7 @@ b.att
 
 __init__을 통해 정적변수(class) 변수를 지정해줄 수 있다.
 
+```python
 class test:
        att=0
        def __init__(self):
@@ -45,7 +46,7 @@ test.att
 >>> 100
 test()
 >>> 200
-
+```
 
 
 # attribute 은닉
