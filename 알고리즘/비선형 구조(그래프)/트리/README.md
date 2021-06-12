@@ -35,4 +35,4 @@ Depth(깊이) : 루트에서 부터 현재노드 까지의 거리
 
 ![image](https://user-images.githubusercontent.com/73323188/121768881-9c71b880-cb9b-11eb-8043-a12ffb01149e.png)
 
-3) 루트가 2개 일
+3) 루트가 2개 일때 
