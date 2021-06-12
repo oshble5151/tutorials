@@ -85,5 +85,10 @@ class Sedan(Car) :
     
     if self.speed > 150:
     self.speed=150
+
+a.upSpeed(200)
+b.upSpeed(200)
+>>> 200
+>>> 150
 ```
 
