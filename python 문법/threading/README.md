@@ -20,6 +20,7 @@ thread는 프로세스의 실행단위를 의미하며, 프로세스는 최소 �
 
 # python threding
 
+__1) 일반실행__
 ```python
 import time
 class process:
@@ -56,6 +57,7 @@ process3runiing
 
 process3runiing
 ```
+__2)threading을 활용한 병렬수행__
 
 ```python
 import threading
