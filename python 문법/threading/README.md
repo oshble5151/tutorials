@@ -21,8 +21,7 @@ thread는 프로세스의 실행단위를 의미하며, 프로세스는 최소 �
 # python threding
 
 ```python
-import threading
-
+import time
 class process:
 	def __init__(self,name):
 		self.process_name = name
@@ -56,4 +55,28 @@ process3runiing
 process3runiing
 
 process3runiing
+```
+
+```python
+import threading
+import time
+
+th1= threading.Thread(target = process1.excution)
+th2= threading.Thread(target = process2.excution)
+th3= threading.Thread(target = process3.excution)
+
+th1.start()
+th2.start()
+th3.start()
+
+>>>
+process1runiing
+process2runiing
+process3runiing
+process3runiing
+process2runiing
+process1runiing
+process3runiing
+process1runiing
+process2runiing
 ```
