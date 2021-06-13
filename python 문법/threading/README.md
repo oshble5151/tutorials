@@ -73,12 +73,20 @@ th3.start()
 
 >>>
 process1runiing
+
 process2runiing
+
 process3runiing
+
 process3runiing
+
 process2runiing
+
 process1runiing
+
 process3runiing
+
 process1runiing
+
 process2runiing
 ```
