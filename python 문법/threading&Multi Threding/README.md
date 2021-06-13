@@ -57,7 +57,7 @@ process3runiing
 
 process3runiing
 ```
-__2)threading을 활용한 병렬수행__
+__2)Multi threading을 활용한 병렬수행__
 
 ```python
 import threading
@@ -89,4 +89,50 @@ process3runiing
 process1runiing
 
 process2runiing
+```
+
+# Multi processing
+
+파이썬 tread는 내부적으로 1개의 Cpu를 사용하기 때문에, 다중 thread를 사용해도 계산속도는 증가하지 않는다.
+
+반면 Multi processing는 여러개의 Cpu를 사용하기 때문에, 계산속도를 증가 시킬수 있다.
+
+```python 
+import multiprocessing
+
+import time
+
+class process:
+	def __init__(self,name):
+		self.process_name = name
+	def excution(self):
+		for _ in range(0,3):
+			print(self.process_name+ 'runiing\n')
+			time.sleep(0.3)
+
+process1 = process('process1')
+process2 = process('process2')
+process3 = process('process3')
+
+mp1 = multiprocessing.Process(target = process1.excution)
+
+mp2 = multiprocessing.Process(target = process2.excution)
+
+mp3 = multiprocessing.Process(target = process3.excution)
+
+mp1.start()
+mp2.start()
+mp3.start()
+
+mp1 = multiprocessing.Process(target = process1.excution)
+mp2 = multiprocessing.Process(target = process2.excution)
+mp3 = multiprocessing.Process(target = process3.excution)
+
+mp1.start()
+mp2.start()
+mp3.start()
+
+mp1.join()
+mp2.join()
+mp3.join()
 ```
