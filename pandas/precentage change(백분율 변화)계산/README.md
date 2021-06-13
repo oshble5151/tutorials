@@ -7,3 +7,17 @@
 # pandas pct_change 
 
 pct_change method를 통해, Series나 DataFrame의 
+
+```python
+ds = pd.Series([1,2,3,4,5])
+ds.pct_change()
+>>>
+0         NaN
+1    1.000000
+2    0.500000
+3    0.333333
+4    0.250000
+```
+pct_change로 얻은 값에 100을 곱하면 백분율 변화값을 구할수 있다.
+
+
