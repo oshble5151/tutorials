@@ -163,3 +163,12 @@ Afghanistan_gdp_sum    9632.095181
 Name: gdpPercap, dtype: float64
 ```
 차이가 있다면, 함수를 인수로 넣었을 때는 index name과 함께 값이 들어간 Series가 생성된다는 점이다.
+
+다음과 같이 조건문을 여러개 주어 함수를 작성할 수 있다. Afghanistan, zim
+```python
+def t(x):
+	if x == 'Afghanistan' :
+		return 'Afghanistan_gdp_sum'
+	elif x == 'Zimbabwe' :
+		return 'Zimbabwe_gdp_sum'
+```
