@@ -155,7 +155,9 @@ def t(x):
 	if x == 'Afghanistan' :
 		return 'Afghanistan_gdp_sum'  # index명에서 'Afghanistan'을 추출하는 함수 작성
 
-df.groupby(t).sum()['gdpPercap'] # index명이 'Afghanistan'인것만
+splitting = df.groupby(t) # # index명에서 'Afghanistan'인 것만 추출
+
+splitting.sum()['gdpPercap'] # 집계함수중 sum을 사용하여 합을 구하고, gdp열을 indexing 함.
 >>>
 continent_gdp_sum    9632.095181
 Name: gdpPercap, dtype: float64
