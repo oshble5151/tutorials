@@ -81,6 +81,8 @@ __2. Transformation : 그룹별로 계산을 수행해준다.__
 
 __3. Filtration : 기준에 만족하는 그룹만 남기고 filtering 해준다.__
 
+__1) Applying 예시
+
 gdp의 평균을 다음과 같이 구할 수 있다.
 ```python 
 df['gdpPercap'].mean()
@@ -130,3 +132,29 @@ array([1977, 1982, 1987, 1992, 1997, 2002, 2007], dtype=int64)
 ```
 위 결과를 통해, Americas에서 1977, 1982, 1987, 1992, 1997, 2002, 2007년에는 gdp가 쳥균 7200을 넘었음을 알 수 있다.
 
+
+__2) group의 인수가 callable로 들어가는 경우
+
+group은 열의 이름을 직접 받아 구분이 가능하지만, 함수와 같은 callable 객체를 받을수 도 있다.
+
+group에 함수를 사용하면, 함수의 return값을 name으로 갖는 행 혹은 열을 생성할 수 있다.
+
+예를 들어, Afghanistan의 년도별 gdp의 평균값을 보려면 다음과 같이 볼 수 있다.
+
+```python
+df.groupby('country').sum()['gdpPercap']['Afghanistan']
+>>> 
+9632.0951811
+```
+
+```python
+
+def t(x):
+	if x == 'Afghanistan' :
+		return 'continent_gdp_sum'
+
+df.groupby(t).sum()['gdpPercap']
+>>>
+continent_gdp_sum    9632.095181
+Name: gdpPercap, dtype: float64
+```
