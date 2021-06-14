@@ -146,15 +146,16 @@ df.groupby('country').sum()['gdpPercap']['Afghanistan']
 >>> 
 9632.0951811
 ```
-
+위와 같은 결과를, groupby에 함수를 넣어 얻기 위해서는 다음과 같이 가능하다.
 ```python
 
 def t(x):
 	if x == 'Afghanistan' :
-		return 'continent_gdp_sum'
+		return 'Afghanistan_gdp_sum'
 
 df.groupby(t).sum()['gdpPercap']
 >>>
 continent_gdp_sum    9632.095181
 Name: gdpPercap, dtype: float64
 ```
+차이가 있다면, 함수를 인수로 넣었을 때는 index name과 함께 값이 들어간 Series가 생성된다는 점이다.
