@@ -75,9 +75,11 @@ Name: gdpPercap, dtype: float64
 ## Applying
 Applying단계에서는, 다음을 수행 가능하다.
 
-__1. Transformation : 그룹별로 계산을 수행해준다.__
+__1. Aggregation : 각 그룹에 대한 요약 통계를 계산한다.(sum,mean등)
 
-__2. Filtration : 기준에 만족하는 그룹만 남기고 filtering 해준다.__
+__2. Transformation : 그룹별로 계산을 수행해준다.__
+
+__3. Filtration : 기준에 만족하는 그룹만 남기고 filtering 해준다.__
 
 gdp의 평균을 다음과 같이 구할 수 있다.
 ```python 
@@ -127,7 +129,4 @@ group[group['continent'] == 'Americas'].year.unique() # 그 중 Americas의 년�
 array([1977, 1982, 1987, 1992, 1997, 2002, 2007], dtype=int64)
 ```
 위 결과를 통해, Americas에서 1977, 1982, 1987, 1992, 1997, 2002, 2007년에는 gdp가 쳥균 7200을 넘었음을 알 수 있다.
-
-
-
 
