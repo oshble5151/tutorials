@@ -149,6 +149,8 @@ df.groupby('country').sum()['gdpPercap']['Afghanistan']
 위와 같은 결과를, groupby에 함수를 넣어 얻기 위해서는 다음과 같이 가능하다.
 ```python
 
+df.index = [x for x in df.country] #함수의 인수 x에는 index name이 들어가므로, index명을 country와 동일하게 줌.
+
 def t(x):
 	if x == 'Afghanistan' :
 		return 'Afghanistan_gdp_sum'
