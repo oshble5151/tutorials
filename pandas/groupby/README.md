@@ -74,8 +74,10 @@ Name: gdpPercap, dtype: float64
 
 ## Applying
 Applying단계에서는, 다음을 수행 가능하다.
-** 1. Transformation : 그룹별로 계산을 수행해준다.
-** 2. Filtration : 기준에 만족하는 그룹만 남기고 filtering 해준다.
+
+__1. Transformation : 그룹별로 계산을 수행해준다.__
+
+__2. Filtration : 기준에 만족하는 그룹만 남기고 filtering 해준다.__
 
 gdp의 평균을 다음과 같이 구할 수 있다.
 ```python 
