@@ -159,7 +159,7 @@ splitting = df.groupby(t) # # index명에서 'Afghanistan'인 것만 추출
 
 splitting.sum()['gdpPercap'] # 집계함수중 sum을 사용하여 합을 구하고, gdp열을 indexing 함.
 >>>
-continent_gdp_sum    9632.095181
+Afghanistan_gdp_sum    9632.095181
 Name: gdpPercap, dtype: float64
 ```
 차이가 있다면, 함수를 인수로 넣었을 때는 index name과 함께 값이 들어간 Series가 생성된다는 점이다.
