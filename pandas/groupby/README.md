@@ -153,9 +153,9 @@ df.index = [x for x in df.country] #함수의 인수 x에는 index name이 들�
 
 def t(x):
 	if x == 'Afghanistan' :
-		return 'Afghanistan_gdp_sum'
+		return 'Afghanistan_gdp_sum'  # index명에서 'Afghanistan'을 추출하는 함수 작성
 
-df.groupby(t).sum()['gdpPercap']
+df.groupby(t).sum()['gdpPercap'] # index명이 'Afghanistan'인것만
 >>>
 continent_gdp_sum    9632.095181
 Name: gdpPercap, dtype: float64
