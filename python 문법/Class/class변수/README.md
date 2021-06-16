@@ -13,6 +13,7 @@ class test:
             return(self.n)
 ```
 
+다음과 같이 클래스 변수를 증가시키는 add_class_att method를 사용했을때, 
 ```python
 a=test(1)
 b=test(2)
