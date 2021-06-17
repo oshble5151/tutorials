@@ -46,6 +46,35 @@ df.groupby(['gender']).get_group('man')
 3    man   180
 ```
 
+# groupby dropna
 
+다음과 같이 남성과 여성의 키와 몸무게가 들어있는 dataframe이 있을때, 키를 그룹화 할 수 있다.
+```python
+df
+>>>
+  gender   tall  weight
+0    man  177.0      75
+1  woman    NaN      55
+2  woman  155.0      40
+3    man  180.0      90
 
+       weight
+tall         
+155.0      40
+177.0      75
+180.0      90
 
+```
+위와 같이 어떤 특성을 기준으로 그룹화할때, 기본적으로 None값의 행을 제외하고 결과를 보여준다.
+
+None값도 보고 싶으면 다음과 같이 dropna=False로 주면 된다.
+
+```python
+df.groupby('tall',dropna=False).sum()
+       weight
+tall         
+155.0      40
+177.0      75
+180.0      90
+NaN        55
+```
