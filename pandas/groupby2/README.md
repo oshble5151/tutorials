@@ -23,6 +23,7 @@ grouped.last()
 dtype: int64
 
 다음과 같이 group에 대한 평균이 가능하다.
+```
 
 ```python
 grouped.mean()
@@ -31,6 +32,7 @@ grouped.mean()
 2     74
 3    111
 ```
+
 동일한 index 번호끼리 평균되었다.
 
 groupby를 사용하면 다음과 같이 지정한 열에서 특정 행의 값을 뽑아 낼 수 있다.
