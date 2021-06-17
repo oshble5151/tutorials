@@ -21,3 +21,7 @@ grouped.last()
 2    200
 3    300
 dtype: int64
+
+다음과 같이 group에 대한 평균이 가능하다.
+```python
+
