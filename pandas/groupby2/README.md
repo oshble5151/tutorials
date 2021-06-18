@@ -138,3 +138,68 @@ foo one   -1.361643 -0.514542
     two   -0.423639 -2.416410
 ```
 2개의 열로 groupby할 경우, Mltiindexing된 dataFrame이 반환된다.
+
+다음과 같이 Multi_index dataframe이 있을때, __level__을 통해 group화 할 수 있다.
+
+```python
+df
+                  C         D
+A   B                        
+foo one   -1.287808 -0.354624
+bar one   -0.696100 -0.499489
+foo two   -0.143256 -0.609751
+bar three -0.663622 -1.653208
+foo two   -0.280383 -1.806659
+bar two    0.120506 -2.009116
+foo one   -0.073835 -0.159918
+    three -0.587425  0.376111
+
+df.groupby(level ="A").sum()
+>>>
+            C         D
+A                      
+bar -1.239216 -4.161813
+foo -2.372706 -2.554841
+
+df
+>>>
+     A      B         C         D
+0  foo    one -1.287808 -0.354624
+1  bar    one -0.696100 -0.499489
+2  foo    two -0.143256 -0.609751
+3  bar  three -0.663622 -1.653208
+4  foo    two -0.280383 -1.806659
+5  bar    two  0.120506 -2.009116
+6  foo    one -0.073835 -0.159918
+7  foo  three -0.587425  0.376111
+
+df2
+>>>
+                  C         D
+A   B                        
+foo one   -1.287808 -0.354624
+bar one   -0.696100 -0.499489
+foo two   -0.143256 -0.609751
+bar three -0.663622 -1.653208
+foo two   -0.280383 -1.806659
+bar two    0.120506 -2.009116
+foo one   -0.073835 -0.159918
+    three -0.587425  0.376111
+
+df.groupby("A").sum()
+>>>
+            C         D
+A                      
+bar -1.239216 -4.161813
+foo -2.372706 -2.554841
+
+df2.groupby(level ="A").sum()
+>>>
+            C         D
+A                      
+bar -1.239216 -4.161813
+foo -2.372706 -2.554841
+```
+위와 같이 df.groupby("A").sum()와 df2.groupby(level ="A").sum()(multi_indexing)의 결과는 같음을 알 수 있다.
+
+
