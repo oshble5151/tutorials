@@ -80,3 +80,19 @@ tall
 180.0      90
 NaN        55
 ```
+
+# groupby attribute
+```python
+df
+>>>
+  gender   tall  weight
+0    man  177.0      75
+1  woman    NaN      55
+2  woman  155.0      40
+3    man  180.0      90
+
+df.groupby('gender').groups
+>>>
+{'man': [0, 3], 'woman': [1, 2]}
+```
+위와 같이 group과 index가 들어간 딕셔너리가 반환됨을 알 수 있다.
