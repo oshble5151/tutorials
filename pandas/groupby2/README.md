@@ -96,3 +96,45 @@ df.groupby('gender').groups
 {'man': [0, 3], 'woman': [1, 2]}
 ```
 위와 같이 group과 index가 들어간 딕셔너리가 반환됨을 알 수 있다.
+
+# grouby
+
+__1) 그룹을 1개 줄 경우__
+
+```python
+df
+>>>
+     A      B         C         D
+0  foo    one -1.287808 -0.354624
+1  bar    one -0.696100 -0.499489
+2  foo    two -0.143256 -0.609751
+3  bar  three -0.663622 -1.653208
+4  foo    two -0.280383 -1.806659
+5  bar    two  0.120506 -2.009116
+6  foo    one -0.073835 -0.159918
+7  foo  three -0.587425  0.376111
+
+grouped = df.groupy("A")
+>>>
+
+            C         D
+A                      
+bar -1.239216 -4.161813
+foo -2.372706 -2.554841
+```
+
+__2) 그룹을 2개 줄 경우__
+
+```python
+grouped = df.groupy(["A","B"])
+>>>
+                  C         D
+A   B                        
+bar one   -0.696100 -0.499489
+    three -0.663622 -1.653208
+    two    0.120506 -2.009116
+foo one   -1.361643 -0.514542
+    three -0.587425  0.376111
+    two   -0.423639 -2.416410
+```
+2개의 열로 groupby할 경우, Mltiindexing된 dataFrame이 반환된다.
