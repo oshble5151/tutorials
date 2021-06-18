@@ -6,6 +6,10 @@
 
 # DFS 구현(재귀)
 
+다음과 같은 graph가 있을때
+
+![image](https://user-images.githubusercontent.com/73323188/122566376-75772300-d082-11eb-87b2-7ebd35a559ac.png)
+
 
 graph : {1: [2, 3, 4], 2: [5], 3: [5], 4: [], 5: [6, 7], 6: [], 7: [3]}
 ```python
