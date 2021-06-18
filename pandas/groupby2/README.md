@@ -202,4 +202,4 @@ foo -2.372706 -2.554841
 ```
 위와 같이 df.groupby("A").sum()와 df2.groupby(level ="A").sum()(multi_indexing)의 결과는 같음을 알 수 있다.
 
-
+GroupBy with MultiIndex 
