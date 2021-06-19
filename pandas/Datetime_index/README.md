@@ -29,3 +29,8 @@ print(df)
  
 __2)to_datetime__
 
+```python
+dti = pd.to_datetime(["31/1/2021", np.datetime64("2021-02-28"), datetime.datetime(2021, 3, 31)])
+```
+pandas는 dateitme_index를 만들때 문자열, np.datetime64, datetime 객체등을 받아들일 수 있다.
+
