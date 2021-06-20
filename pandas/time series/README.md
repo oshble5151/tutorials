@@ -19,3 +19,12 @@ ds.resample("2h").sum()
 Freq: 2H, dtype: int64
 ```
 위와 같이 2시간 간격의 index간격으로 추출하여 합하거나, 평균내는 것이 가능하다.
+
+
+__2) add day__
+
+```python
+dt = Timestamp('2021-06-17 00:00:00') # Thurs day
+
+dt.day_name()
+>>> Thursday
