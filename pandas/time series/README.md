@@ -24,7 +24,16 @@ Freq: 2H, dtype: int64
 __2) add day__
 
 ```python
-dt = Timestamp('2021-06-17 00:00:00') # Thurs day
+dt = pd.Timestamp('2021-06-17 00:00:00') # Thurs day
 
 dt.day_name()
->>> Thursday
+>>> 'Thursday'
+```
+
+pd.offsets.BDay()를 사용하면, 주말을 제외하여 day를 더해줄 수 있다.
+```python
+dt_friday = pd.Timestamp('2021-06-18 00:00:00') # Fri day
+dt_monday = dt_friday + pd.offsets.BDay()
+dt_monday.day_name()
+```
+
