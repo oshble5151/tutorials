@@ -37,3 +37,23 @@ dt_monday = dt_friday + pd.offsets.BDay()
 dt_monday.day_name()
 ```
 
+# pd.to_datetime
+
+pd.to_datetime는 series 객체나 list객체를 받을 수 있다.
+
+어떤 객체를 받는지에 따라 반환값의 type이 다르다.
+
+```python
+pd.to_datetime(pd.Series(["Jul 31, 2021", "2021-06-21", None]))
+>>>
+0   2021-07-31
+1   2021-06-21
+2          NaT
+dtype: datetime64[ns]
+
+
+pd.to_datetime(["2021/06/21", "2010.06.22"])
+>>> DatetimeIndex(['2021-06-21', '2010-06-22'], dtype='datetime64[ns]', freq=None)
+
+```
+
