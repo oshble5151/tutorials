@@ -46,3 +46,16 @@ __Q3 = 4분의 3 = 전체의 75%__
 ## 4분위수 범위
 
 4분위수 범위 : 제 3사분위수 - 제 1사분위수 
+
+# pandas quantile
+
+pandas는 quantile을 이용해 분위수를 구할 수 있다.
+
+```python
+import pandas as pd
+ds = pd.Series([42,40,38,37,43,39,78,38,45,44,40,38,41,62,61,44])
+
+ds.quantile(.25)
+>>> 38.75
+ds.quantile(.75)
+>>> 44.25
