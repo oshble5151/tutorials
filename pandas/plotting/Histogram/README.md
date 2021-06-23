@@ -28,8 +28,9 @@ print(df['a'].max(), df['a'].min())
 위의 dataframe에서 'a'column만을, 즉 Series객체를 hitogram으로 plot해보려 한다. 최대 최소값으로 계급구간의 범위를 확인하였다.
 ```python
 df['a'].plot.hist()
-![image](https://user-images.githubusercontent.com/73323188/121534421-2c005580-ca3c-11eb-92fb-dca71c8ced9f.png)
 ```
+![image](https://user-images.githubusercontent.com/73323188/121534421-2c005580-ca3c-11eb-92fb-dca71c8ced9f.png)
+
 
 # DataFrame hist plot
 DataFrame을 hist로 plot하면, 모든 열의 histogram을 한 figure에 plot해준다.
