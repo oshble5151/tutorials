@@ -162,6 +162,7 @@ from iris.experimental.equalise_cubes import equalise_attributes
 equalise_attributes(cubes)
 cubes.merge_cube()
 ```
-
+## iris.experimental.equalise_cubes.equalise_attributes변경
+iris.util.equalise_attributes(<cubes>) 로 변경
 
 
