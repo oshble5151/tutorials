@@ -3,7 +3,7 @@
 30년 동안의 1월 자료의 평균값에 대한 anomoly를 구해보려 한다.
 ```python
 import iris
-from iris.experimental.equalise_cubes import equalise_attributes
+from iris.experimental.equalise_cubes import equalise_attributes (iris.util.equalise_attributes(<cubes>)" => ver3.3)
 import iris.quickplot as qplt
 import matplotlib.pyplot as plt
 from iris.std_names import STD_NAMES
