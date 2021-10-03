@@ -1,7 +1,7 @@
 ## Datetime_index 생성하기
 __1)date_range__
 
-```python
+```python 
 date_index = pd.date_range("20210101",periods=12,freq='M')
 >>>
 DatetimeIndex(['2021-01-31', '2021-02-28', '2021-03-31', '2021-04-30',
