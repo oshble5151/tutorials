@@ -29,3 +29,25 @@ coord_names = [x.name() for x in f.coords()]
 
 >>> ['time', 'latitude', 'longitude']
 ```
+
+
+# 축이 가지는 정보 
+## 1) standard_name
+## 2) long_name
+## 3) units
+## 4) points, bounds 를 가진다.
+```python
+t.points
+>>> array([47848.5, 47849.5, 47850.5, ..., 52228.5, 52229.5, 52230.5])
+
+t.bounds
+>>> 
+array([[47848., 47849.],
+       [47849., 47850.],
+       [47850., 47851.],
+       ...,
+       [52228., 52229.],
+       [52229., 52230.],
+       [52230., 52231.]])
+```
+
