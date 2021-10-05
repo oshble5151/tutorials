@@ -27,4 +27,6 @@ con = iris.Constraint(latitude=lat_con , longitude = lon_con)
 lat_con = lambda cell: cell <= 20 # lambda로 가능
 ```
 
-Cube attributes can also be part of the constraint criteria. Supposing a cube attribute of STASH existed, as is the case when loading PP files, then specific STASH codes can be filtered:
+# 속성도 제약 조건으로 사용가능
+
+# 
