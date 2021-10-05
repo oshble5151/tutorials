@@ -2,7 +2,7 @@
 
 ## 1) Cube.add_dim_coord
 ## 2) Cube.add_aux_coord
-## 3) Cube.remove_coord
+## 3) Cube.remove_coord 
 
 # 스칼라 좌표로 만드는 법
 
