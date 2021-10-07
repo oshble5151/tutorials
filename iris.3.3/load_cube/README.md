@@ -43,7 +43,7 @@ cube= cube.extract(hour_11)
 ## 시간 범위로 extract하기
 
 ```python
-
+from iris.time import PartialDateTime
 pdt1 = PartialDateTime(year=2004, month=1)
 pdt2 = PartialDateTime(year=2004, month=7)
 
