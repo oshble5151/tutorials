@@ -50,4 +50,8 @@ pdt2 = PartialDateTime(year=2004, month=7)
 con = iris.Constraint(
     time=lambda cell: pdt1 <= cell.point < pdt2)
 f.extract(con)
+t1 = iris.Constraint(time=lambda cell: cell.point.month == 1)
+t2 = iris.Constraint(time=lambda cell: cell.point.day == 3)
+f.extract(t1&t2)
+
 ```
