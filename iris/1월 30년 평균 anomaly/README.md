@@ -1,4 +1,4 @@
-## 30년 동안의 1월 자료의 평균값에 대한 anomoly
+## 30년 동안의  1월 자료의 평균값에 대한 anomoly
 
 30년 동안의 1월 자료의 평균값에 대한 anomoly를 구해보려 한다.
 ```python
@@ -49,3 +49,4 @@ for i,j in zip(*for_index_list):
 
 위 그림과 같이, 각 자료의 1월에서 총 30년동안의 1월의 평균값을 빼준 anomaly를 plot 하였다.
 
+ 
