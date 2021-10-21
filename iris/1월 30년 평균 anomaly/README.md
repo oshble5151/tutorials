@@ -4,7 +4,7 @@
 ```python
 import iris
 from iris.experimental.equalise_cubes import equalise_attributes (iris.util.equalise_attributes(<cubes>)" => ver3.3)
-import iris.quickplot as qplt
+import iris.quickplot as qplt 
 import matplotlib.pyplot as plt
 from iris.std_names import STD_NAMES
 
