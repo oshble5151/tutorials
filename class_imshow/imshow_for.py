@@ -7,7 +7,7 @@ from matplotlib import docstring
 from matplotlib.pyplot import gcf,Axes,sci,cbook
 
 def gca(**kwargs):
-       return gcf().gca(**kwargs)
+       return gcf().gca(**kwargs) 
        
 ## plt.imshow Source code (X=>self)
 @docstring.copy(Axes.imshow)
